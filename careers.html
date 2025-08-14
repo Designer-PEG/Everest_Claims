@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - Everest Claims & Advisory</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@heroicons/react@2.0.16/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/react-hot-toast@2.4.1/dist/react-hot-toast.js"></script>
+    <style>
+        .menu-open {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 w-full bg-white backdrop-blur-md shadow-md border-b border-gray-200 transition-all duration-300 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-3">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2 z-60">
+                    <a href="index.html" class="flex items-center">
+                        <img src="./assets/img/logo.png" alt="Everest Claims & Advisory Logo" class="h-12 w-auto">
+                        <span class="hidden sm:block font-semibold text-xl text-gray-800 ml-2">
+                            Everest Claims & Advisory
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Desktop navigation -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="px-3 py-2 font-medium transition-colors text-gray-700 hover:text-blue-600" id="nav-home">
+                        Home
+                    </a>
+                    <a href="about.html" class="px-3 py-2 font-medium transition-colors text-gray-700 hover:text-blue-600" id="nav-about">
+                        About Us
+                    </a>
+                    <a href="services.html" class="px-3 py-2 font-medium transition-colors text-gray-700 hover:text-blue-600" id="nav-services">
+                        Our Services
+                    </a>
+                    <a href="contact.html" class="px-3 py-2 font-medium transition-colors text-gray-700 hover:text-blue-600" id="nav-contact">
+                        Contact
+                    </a>
+                    <a href="tel:+9779851135421" class="ml-4 flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                        </svg>
+                        <span>Call Now</span>
+                    </a>
+                </div>
+
+                <!-- Mobile menu toggle -->
+                <div class="md:hidden flex items-center z-60">
+                    <button id="mobile-menu-toggle" class="outline-none" aria-label="Toggle menu">
+                        <svg id="menu-icon" class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 hidden">
+        <div class="absolute inset-0 backdrop-blur-lg bg-black/50"></div>
+        <button id="close-menu" class="absolute top-6 right-6 text-white text-3xl z-50" aria-label="Close menu">
+            &times;
+        </button>
+        <div class="relative z-40 h-full flex flex-col items-center justify-center">
+            <div class="flex flex-col items-center gap-8 text-white">
+                <a href="index.html" class="text-2xl font-medium transition-colors hover:text-blue-400 nav-mobile-home">
+                    Home
+                </a>
+                <a href="about.html" class="text-2xl font-medium transition-colors hover:text-blue-400 nav-mobile-about">
+                    About Us
+                </a>
+                <a href="services.html" class="text-2xl font-medium transition-colors hover:text-blue-400 nav-mobile-services">
+                    Our Services
+                </a>
+                <a href="contact.html" class="text-2xl font-medium transition-colors hover:text-blue-400 nav-mobile-contact">
+                    Contact
+                </a>
+                <a href="tel:+9779851135421" class="mt-4 flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-xl">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                    </svg>
+                    <span>Call Now</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="bg-gray-50 min-h-screen pt-16">
+        <!-- Toast Notifications Container -->
+        <div id="toast-container" class="fixed top-4 left-0 right-0 flex justify-center z-50 pointer-events-none"></div>
+
+        <!-- Hero Section -->
+        <div class="relative bg-gradient-to-r from-blue-800 to-blue-600">
+            <div class="absolute inset-0 bg-black opacity-20"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative">
+                <div class="text-center">
+                    <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
+                        Build Your Future With Us
+                    </h1>
+                    <p class="mt-6 text-xl text-blue-100 max-w-3xl mx-auto">
+                        Join our team of innovators and help shape the future of our industry
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <!-- Job Count Header -->
+            <div class="mb-12 bg-white rounded-xl shadow-md p-6 text-center">
+                <h2 class="text-xl font-semibold text-gray-900">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6 inline-block mr-2 text-blue-600">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <span id="job-count">0</span> Open Position<span id="job-plural">s</span> Available
+                </h2>
+            </div>
+
+            <!-- Job Listings Container -->
+            <div id="job-listings" class="space-y-6">
+                <!-- Jobs will be inserted here by JavaScript -->
+            </div>
+
+            <!-- No Jobs Message (hidden by default) -->
+            <div id="no-jobs-message" class="bg-white rounded-xl shadow-md overflow-hidden py-16 text-center hidden">
+                <div class="max-w-md mx-auto px-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="mx-auto h-12 w-12 text-gray-400">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <h3 class="mt-4 text-lg font-medium text-gray-900">No open positions</h3>
+                    <p class="mt-2 text-gray-600">
+                        We don't have any open positions at the moment. Please check back later!
+                    </p>
+                    <div class="mt-6">
+                        <button onclick="window.location.reload()" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-4 w-4 mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                            </svg>
+                            Refresh Page
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Benefits Section -->
+            <div id="benefits-section" class="mt-20 hidden">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900">Why Join Our Team?</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-gray-600">
+                        We're committed to providing an environment where you can grow both professionally and personally
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-50 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-8 w-8 text-blue-600">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Competitive Compensation</h3>
+                        <p class="text-gray-600">Industry-leading salary and equity packages</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-50 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-8 w-8 text-blue-600">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Flexible Work</h3>
+                        <p class="text-gray-600">Remote-friendly with flexible hours to suit your lifestyle</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-50 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-8 w-8 text-blue-600">
+                                <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                                <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Career Growth</h3>
+                        <p class="text-gray-600">Dedicated mentorship and clear promotion paths</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-50 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-8 w-8 text-blue-600">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Health & Wellness</h3>
+                        <p class="text-gray-600">Comprehensive medical, dental, and vision coverage</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-50 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-8 w-8 text-blue-600">
+                                <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                                <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Learning Budget</h3>
+                        <p class="text-gray-600">Annual stipend for professional development</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-50 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-8 w-8 text-blue-600">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Inclusive Culture</h3>
+                        <p class="text-gray-600">Diverse team where everyone feels valued</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-300 py-12 md:py-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 text-center md:text-left">
+                <!-- Logo and Description -->
+                <div class="col-span-1 flex flex-col items-center md:items-start">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <img src="./assets/img/logo.png" alt="Everest Claims and Advisory" class="h-10" />
+                        <span class="text-xl font-semibold text-white">Everest Claims</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed max-w-xs">
+                        Professional advisory services for complex claims and risk management solutions.
+                    </p>
+                </div>
+
+                <!-- Services -->
+                <div class="md:flex md:flex-col md:items-start">
+                    <h3 class="text-sm font-semibold text-white mb-6 uppercase tracking-wider">Services</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="/services.html?insurance-claims" class="text-gray-400 hover:text-white transition duration-200 text-sm block">
+                                Insurance Claims
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/services.html?risk-assessment" class="text-gray-400 hover:text-white transition duration-200 text-sm block">
+                                Risk Assessment
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/services.html?legal-consultation" class="text-gray-400 hover:text-white transition duration-200 text-sm block">
+                                Legal Consultation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/services.html?financial-recovery" class="text-gray-400 hover:text-white transition duration-200 text-sm block">
+                                Financial Recovery
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div class="md:flex md:flex-col md:items-start">
+                    <h3 class="text-sm font-semibold text-white mb-6 uppercase tracking-wider">Company</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="/about.html" class="text-gray-400 hover:text-white transition duration-200 text-sm block">
+                                About Us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/contact.html" class="text-gray-400 hover:text-white transition duration-200 text-sm block">
+                                Contact Us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/cases.html" class="text-gray-400 hover:text-white transition duration-200 text-sm block">
+                                Case Studies
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/careers.html" class="text-gray-400 hover:text-white transition duration-200 text-sm block">
+                                Careers
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="md:flex md:flex-col md:items-start">
+                    <h3 class="text-sm font-semibold text-white mb-6 uppercase tracking-wider">Contact</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center justify-center md:justify-start gap-2 text-gray-400 text-sm">
+                            <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            Tinkune, Kathmandu
+                        </li>
+                        <li class="flex items-center justify-center md:justify-start gap-2 text-gray-400 text-sm">
+                            <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            +977-9851135421
+                        </li>
+                        <li class="flex items-center justify-center md:justify-start gap-2 text-gray-400 text-sm">
+                            <svg class="w-4 h-4 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            everestclaims8848@gmail.com
+                        </li>
+                        <li class="mt-4 pt-4 border-t border-gray-800">
+                            <div class="flex items-center justify-center md:justify-start gap-2 mb-2">
+                                <svg class="w-4 h-4 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <h4 class="text-xs font-semibold text-white uppercase tracking-wider">Business Hours</h4>
+                            </div>
+                            <p class="text-green-600 text-sm">Sunday - Friday: 10:00 AM - 5:00 PM</p>
+                            <p class="text-red-500 text-sm mt-1">Saturday: Closed</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-xs order-2 md:order-1">
+                    © <span id="current-year"></span> Everest Claims and Advisory Pvt. Ltd. All rights reserved.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4 md:gap-6 order-1 md:order-2">
+                    <a href="/privacy-policy.html" class="text-gray-400 hover:text-white transition duration-200 text-xs">
+                        Privacy Policy
+                    </a>
+                    <a href="/terms-of-service.html" class="text-gray-400 hover:text-white transition duration-200 text-xs">
+                        Terms of Service
+                    </a>
+                    <a href="/disclaimer.html" class="text-gray-400 hover:text-white transition duration-200 text-xs">
+                        Disclaimer
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hidden">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+
+    <script>
+        // Sample career data for job posting
+        // const careerData = [
+        //     {
+        //         "id": 1,
+        //         "title": "Example Title - IT and Software Manager",
+        //         "department": "IT",
+        //         "location": "Kathmandu",
+        //         "type": "Full-time",
+        //         "description": "This should hold the example ",
+        //         "requirements": [
+        //             "Bachelor's degree in Business, Finance or related field",
+        //             "2+ years experience in claims adjusting",
+        //             "Strong analytical and negotiation skills",
+        //             "Excellent communication skills"
+        //         ],
+        //         "posted": "2023-05-15"
+        //     }
+        // ];
+
+        // Mobile menu functionality
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenu = document.getElementById('close-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const body = document.body;
+
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            body.classList.toggle('menu-open');
+            menuIcon.innerHTML = mobileMenu.classList.contains('hidden') ? 
+                '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>' :
+                '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>';
+        });
+
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            body.classList.remove('menu-open');
+            menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>';
+        });
+
+        // Close menu when clicking on nav links
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                body.classList.remove('menu-open');
+                menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>';
+            });
+        });
+
+        // Hide navbar on scroll
+        const navbar = document.getElementById('navbar');
+        let lastScrollY = window.scrollY;
+        const scrollThreshold = 10;
+        const navbarHeight = navbar.offsetHeight;
+        let isHidden = false;
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            
+            // Don't hide if scrolled to top or mobile menu is open
+            if (currentScrollY <= navbarHeight || body.classList.contains('menu-open')) {
+                if (isHidden) showNavbar();
+                lastScrollY = currentScrollY;
+                return;
+            }
+            
+            if (Math.abs(currentScrollY - lastScrollY) > scrollThreshold) {
+                if (currentScrollY > lastScrollY && !isHidden) {
+                    hideNavbar();
+                } else if (currentScrollY < lastScrollY && isHidden) {
+                    showNavbar();
+                }
+                lastScrollY = currentScrollY;
+            }
+        });
+
+        function hideNavbar() {
+            navbar.style.transform = 'translateY(-100%)';
+            navbar.style.boxShadow = 'none';
+            isHidden = true;
+        }
+
+        function showNavbar() {
+            navbar.style.transform = 'translateY(0)';
+            navbar.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)';
+            isHidden = false;
+        }
+
+        // Set active nav link based on current page
+        function setActiveNav() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const navLinks = {
+                'index.html': document.getElementById('nav-home'),
+                'about.html': document.getElementById('nav-about'),
+                'services.html': document.getElementById('nav-services'),
+                'careers.html': document.getElementById('nav-careers'),
+                'contact.html': document.getElementById('nav-contact')
+            };
+
+            const mobileNavLinks = {
+                'index.html': document.querySelector('.nav-mobile-home'),
+                'about.html': document.querySelector('.nav-mobile-about'),
+                'services.html': document.querySelector('.nav-mobile-services'),
+                'careers.html': document.querySelector('.nav-mobile-careers'),
+                'contact.html': document.querySelector('.nav-mobile-contact')
+            };
+
+            // Reset all links
+            Object.values(navLinks).forEach(link => {
+                if (link) {
+                    link.classList.remove('text-blue-600', 'border-b-2', 'border-blue-600');
+                    link.classList.add('text-gray-700', 'hover:text-blue-600');
+                }
+            });
+
+            Object.values(mobileNavLinks).forEach(link => {
+                if (link) link.classList.remove('text-blue-400');
+            });
+
+            // Set active link
+            if (navLinks[currentPage]) {
+                navLinks[currentPage].classList.add('text-blue-600', 'border-b-2', 'border-blue-600');
+                navLinks[currentPage].classList.remove('text-gray-700', 'hover:text-blue-600');
+            }
+
+            if (mobileNavLinks[currentPage]) {
+                mobileNavLinks[currentPage].classList.add('text-blue-400');
+            }
+        }
+
+        // Toast notification function
+        function showToast(message, type = 'success') {
+            const toastContainer = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            
+            toast.className = `bg-white rounded-lg shadow-lg p-4 max-w-md w-full pointer-events-auto flex items-start mb-2 transition-all duration-300 ${
+                type === 'success' ? 'border-l-4 border-green-500' : 'border-l-4 border-red-500'
+            }`;
+            
+            toast.innerHTML = message;
+            toastContainer.appendChild(toast);
+            
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                toast.remove();
+            }, 5000);
+        }
+
+        // Job application function
+        function handleApply(jobId) {
+            const job = careerData.find(j => j.id === jobId);
+            if (!job) return;
+
+            // Disable the apply button
+            const applyButton = document.querySelector(`button[data-job-id="${jobId}"]`);
+            applyButton.disabled = true;
+            applyButton.innerHTML = `
+                <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Applying...
+            `;
+            applyButton.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+            applyButton.classList.add('bg-blue-400', 'cursor-not-allowed');
+            
+            // Simulate API submission
+            setTimeout(() => {
+                // Re-enable the button
+                applyButton.disabled = false;
+                applyButton.innerHTML = `
+                    Apply Now
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="ml-2 h-4 w-4">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                `;
+                applyButton.classList.remove('bg-blue-400', 'cursor-not-allowed');
+                applyButton.classList.add('bg-blue-600', 'hover:bg-blue-700');
+                
+                // Show success toast
+                const successMessage = `
+                    <div class="flex items-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6 text-green-500 mr-2 mt-0.5 flex-shrink-0">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <div>
+                            <p class="font-medium">Application submitted!</p>
+                            <p class="text-sm text-gray-500">
+                                We've received your application for ${job.title}.
+                            </p>
+                        </div>
+                    </div>
+                `;
+                showToast(successMessage, 'success');
+            }, 1500);
+        }
+
+        // Render job listings
+        function renderJobs() {
+            const jobListingsContainer = document.getElementById('job-listings');
+            const noJobsMessage = document.getElementById('no-jobs-message');
+            const benefitsSection = document.getElementById('benefits-section');
+            const jobCountElement = document.getElementById('job-count');
+            const jobPluralElement = document.getElementById('job-plural');
+            
+            // Filter valid jobs (simulating the React component's filter logic)
+            const validJobs = careerData.filter(job => 
+                /^\d/.test(job.id.toString()) && 
+                job.department && 
+                job.department.trim() !== ''
+            );
+            
+            // Update job count
+            jobCountElement.textContent = validJobs.length;
+            jobPluralElement.textContent = validJobs.length !== 1 ? 's' : '';
+            
+            if (validJobs.length > 0) {
+                // Show job listings and benefits
+                noJobsMessage.classList.add('hidden');
+                benefitsSection.classList.remove('hidden');
+                
+                // Render each job
+                jobListingsContainer.innerHTML = validJobs.map(job => `
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg">
+                        <div class="p-6 sm:p-8">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-900">${job.title}</h3>
+                                    <div class="mt-2 flex flex-wrap items-center gap-3">
+                                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                                            ${job.department}
+                                        </span>
+                                        <span class="inline-flex items-center text-sm text-gray-600">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-4 w-4 mr-1">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            </svg>
+                                            ${job.location}
+                                        </span>
+                                        <span class="inline-flex items-center text-sm text-gray-600">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-4 w-4 mr-1">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                            ${job.type}
+                                        </span>
+                                    </div>
+                                </div>
+                                <button 
+                                    onclick="handleApply(${job.id})"
+                                    data-job-id="${job.id}"
+                                    class="mt-4 sm:mt-0 inline-flex items-center px-5 py-2 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-300"
+                                >
+                                    Apply Now
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="ml-2 h-4 w-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <div class="mt-6">
+                                <p class="text-gray-700">${job.description}</p>
+                                
+                                <div class="mt-6">
+                                    <h4 class="text-sm font-semibold text-gray-900 uppercase tracking-wider">Requirements</h4>
+                                    <ul class="mt-3 space-y-2">
+                                        ${job.requirements.map(req => `
+                                            <li class="flex items-start">
+                                                <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                </svg>
+                                                <span class="text-gray-700">${req}</span>
+                                            </li>
+                                        `).join('')}
+                                    </ul>
+                                </div>
+
+                                <div class="mt-6 flex items-center justify-between">
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-4 w-4 mr-1">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        </svg>
+                                        Posted on ${new Date(job.posted).toLocaleDateString('en-US', {
+                                            year: 'numeric',
+                                            month: 'long',
+                                            day: 'numeric'
+                                        })}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            } else {
+                // Show no jobs message and hide benefits
+                jobListingsContainer.innerHTML = '';
+                noJobsMessage.classList.remove('hidden');
+                benefitsSection.classList.add('hidden');
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            setActiveNav();
+            
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // Scroll to top button
+            const scrollToTopButton = document.getElementById('scrollToTop');
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    scrollToTopButton.classList.remove('hidden');
+                } else {
+                    scrollToTopButton.classList.add('hidden');
+                }
+            });
+            
+            scrollToTopButton.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            
+            // Simulate loading delay (like the React component)
+            setTimeout(() => {
+                renderJobs();
+            }, 800);
+        });
+
+        window.addEventListener('popstate', setActiveNav);
+    </script>
+</body>
+</html>

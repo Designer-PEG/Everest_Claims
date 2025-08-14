@@ -1,0 +1,153 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #333;
+  background: #f8f9fa;
+}
+
+body.menu-open {
+    overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+/* Navbar */
+nav#navbar {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar {
+  background: white;
+  border-bottom: 1px solid #ddd;
+  padding: 1rem 0;
+}
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar nav a {
+  margin: 0 10px;
+  color: #333;
+  text-decoration: none;
+}
+.navbar nav a:hover {
+  color: #007bff;
+}
+
+/* Hero */
+.hero {
+  background: white;
+  padding: 4rem 0;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.tag {
+  background: #f0f0f0;
+  padding: 0.3rem 0.6rem;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+.highlight {
+  color: #007bff;
+}
+.hero-text h1 {
+  font-size: 2rem;
+}
+.hero-text p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+.btn-group {
+  display: flex;
+  gap: 1rem;
+}
+.btn-primary {
+  background: #007bff;
+  border: none;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  cursor: pointer;
+}
+.btn-outline {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 0.8rem 1.2rem;
+  cursor: pointer;
+}
+.hero-images {
+  position: relative;
+}
+.hero-images img {
+  width: 100%;
+  border-radius: 8px;
+}
+.hero-images .overlay {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 55%;
+  border-radius: 8px;
+  border: 2px solid white;
+}
+
+/* Stats */
+.stats {
+  background: #f9f9f9;
+  padding: 3rem 0;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.stat {
+  background: white;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* Features */
+.features {
+  padding: 3rem 0;
+}
+.section-title {
+  text-align: center;
+  font-size: 1.8rem;
+}
+.section-desc {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.feature-card {
+  background: white;
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+.icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+}
