@@ -16,7 +16,37 @@
     <meta name="twitter:title" content="Contact Us - Everest Claims & Advisory">
     <meta name="twitter:description" content="Professional insurance claims assistance and advisory services in Nepal. Contact us today.">
     <meta name="twitter:image" content="https://www.everestclaims.com/assets/img/logo.png">
+    <link href="./styles.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        blue: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#2563eb',
+                            600: '#1d4ed8',
+                            700: '#1e40af',
+                            800: '#1e3a8a',
+                            900: '#172554',
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
     <script src="https://unpkg.com/@heroicons/react@2.0.18/outline/index.js"></script>
     <style>
@@ -26,6 +56,7 @@
     </style>
 </head>
 <body class="bg-gray-50">
+    <a href="#main-content" class="skip-link">Skip to Main Content</a>
     <!-- Navbar -->
     <nav id="navbar" class="fixed top-0 w-full bg-white backdrop-blur-md shadow-md border-b border-gray-200 transition-all duration-300 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -105,20 +136,23 @@
     </div>
 
     <!-- Contact Page Content -->
-    <div class="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 pt-20 py-12 px-4 sm:px-6 lg:px-8">
+    <main id="main-content" class="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 pt-20 py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h1 class="text-4xl font-bold text-gray-900 sm:text-5xl">
+                <h1 class="text-4xl font-bold text-gray-900 sm:text-5xl animate-fade-in">
                     Contact Us
                 </h1>
-                <p class="mt-6 text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                    Have questions or need assistance? Our team is here to help you with any inquiries you may have.
+                <p class="mt-6 text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed animate-slide-up">
+                    Have questions or need assistance? Our team is here to help you with any inquiries. <br>
+                    <span class="inline-block mt-3 px-4 py-1.5 bg-blue-50 text-blue-700 text-sm font-semibold rounded-full border border-blue-100 shadow-sm">
+                        ⚡ Response Guarantee: We respond to inquiries within 4 business hours
+                    </span>
                 </p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <!-- Contact Form -->
-                <div id="contact-form-container" class="bg-white p-8 shadow-lg rounded-xl border border-gray-100">
+                <div id="contact-form-container" class="bg-white p-6 sm:p-8 shadow-lg rounded-xl border border-gray-100">
                     <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
                         <svg class="h-6 w-6 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
@@ -126,20 +160,20 @@
                         Send us a message
                     </h2>
                     
-                    <div id="form-success-message" class="hidden bg-green-50 border border-green-200 rounded-xl p-6">
+                    <div id="form-success-message" class="hidden bg-emerald-50 border border-emerald-200 rounded-xl p-6">
                         <div class="flex items-start">
                             <div class="flex-shrink-0">
-                                <svg class="h-5 w-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="h-5 w-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                                 </svg>
                             </div>
                             <div class="ml-3">
-                                <h3 class="text-sm font-medium text-green-800">Message sent successfully!</h3>
-                                <div class="mt-2 text-sm text-green-700">
+                                <h3 class="text-sm font-medium text-emerald-800">Message sent successfully!</h3>
+                                <div class="mt-2 text-sm text-emerald-700">
                                     <p>Thank you for contacting us. We'll get back to you soon.</p>
                                 </div>
                                 <div class="mt-4">
-                                    <button id="reset-form-btn" class="inline-flex items-center text-sm font-medium text-green-800 hover:text-green-600 transition-colors">
+                                    <button id="reset-form-btn" class="inline-flex items-center text-sm font-medium text-emerald-800 hover:text-emerald-600 transition-colors">
                                         <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
                                         </svg>
@@ -171,7 +205,7 @@
 
                         <div>
                             <label for="name" class="block text-sm font-medium text-gray-700 mb-1">
-                                Full Name
+                                Full Name <span class="text-red-600 font-semibold">(Required)</span>
                             </label>
                             <div class="mt-1 relative rounded-md shadow-sm">
                                 <input
@@ -179,7 +213,10 @@
                                     name="name"
                                     id="name"
                                     placeholder="Ex: Suresh Sharma"
+                                    aria-required="true"
+                                    aria-describedby="name-error"
                                     class="block w-full px-4 py-3 rounded-lg border border-gray-300 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500 shadow-sm focus:outline-none transition duration-150 ease-in-out"
+                                    required
                                 />
                                 <div id="name-error-icon" class="hidden absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                                     <svg class="h-5 w-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -187,12 +224,12 @@
                                     </svg>
                                 </div>
                             </div>
-                            <p id="name-error" class="hidden mt-2 text-sm text-red-600"></p>
+                            <p id="name-error" class="hidden mt-2 text-sm text-red-600" role="alert"></p>
                         </div>
 
                         <div>
                             <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
-                                Email Address
+                                Email Address <span class="text-red-600 font-semibold">(Required)</span>
                             </label>
                             <div class="mt-1 relative rounded-md shadow-sm">
                                 <input
@@ -200,7 +237,10 @@
                                     name="email"
                                     id="email"
                                     placeholder="Ex: everestclaims8848@gmail.com"
+                                    aria-required="true"
+                                    aria-describedby="email-error"
                                     class="block w-full px-4 py-3 rounded-lg border border-gray-300 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500 shadow-sm focus:outline-none transition duration-150 ease-in-out"
+                                    required
                                 />
                                 <div id="email-error-icon" class="hidden absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                                     <svg class="h-5 w-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -208,12 +248,12 @@
                                     </svg>
                                 </div>
                             </div>
-                            <p id="email-error" class="hidden mt-2 text-sm text-red-600"></p>
+                            <p id="email-error" class="hidden mt-2 text-sm text-red-600" role="alert"></p>
                         </div>
 
                         <div>
                             <label for="message" class="block text-sm font-medium text-gray-700 mb-1">
-                                Your Message
+                                Your Message <span class="text-red-600 font-semibold">(Required)</span>
                             </label>
                             <div class="mt-1 relative rounded-md shadow-sm">
                                 <textarea
@@ -221,7 +261,10 @@
                                     id="message"
                                     rows="5"
                                     placeholder="How can we help you today?"
+                                    aria-required="true"
+                                    aria-describedby="message-error"
                                     class="block w-full px-4 py-3 rounded-lg border border-gray-300 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500 shadow-sm focus:outline-none transition duration-150 ease-in-out"
+                                    required
                                 ></textarea>
                                 <div id="message-error-icon" class="hidden absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                                     <svg class="h-5 w-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -229,7 +272,7 @@
                                     </svg>
                                 </div>
                             </div>
-                            <p id="message-error" class="hidden mt-2 text-sm text-red-600"></p>
+                            <p id="message-error" class="hidden mt-2 text-sm text-red-600" role="alert"></p>
                         </div>
 
                         <div class="pt-2">
@@ -258,7 +301,7 @@
                 </div>
 
                 <!-- Contact Information -->
-                <div class="bg-white p-8 shadow-lg rounded-xl border border-gray-100">
+                <div class="bg-white p-6 sm:p-8 shadow-lg rounded-xl border border-gray-100">
                     <div class="space-y-10">
                         <div>
                             <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
@@ -297,9 +340,9 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="ml-4">
+                                <div class="ml-4 min-w-0">
                                     <h3 class="text-lg font-semibold text-gray-900">Email</h3>
-                                    <p class="mt-1 text-gray-600">everestclaims8848@gmail.com</p>
+                                    <p class="mt-1 text-gray-600 break-all">everestclaims8848@gmail.com</p>
                                     <p class="mt-1 text-sm text-gray-500">Typically response time within 3-4 business days</p>
                                 </div>
                             </div>
@@ -328,22 +371,36 @@
                                 </svg>
                                 Business Hours
                             </h3>
-                            <ul class="space-y-3">
-                                <li class="flex justify-between text-base text-gray-600">
-                                    <span class="font-medium text-green-500">Sunday - Friday</span>
-                                    <span class="text-green-500">10:00 AM - 5:00 PM</span>
+                            <ul class="space-y-3 mb-6">
+                                <li class="flex flex-col sm:flex-row sm:justify-between text-base text-gray-600 gap-1 sm:gap-0">
+                                    <span class="font-medium text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-100 w-fit">Sunday - Friday</span>
+                                    <span class="text-emerald-600 font-semibold sm:text-right">10:00 AM - 5:00 PM</span>
                                 </li>
-                                <li class="flex justify-between text-base text-gray-600">
-                                    <span class="font-medium text-red-500">Saturday</span>
-                                    <span class="text-red-500">Closed</span>
+                                <li class="flex flex-col sm:flex-row sm:justify-between text-base text-gray-600 gap-1 sm:gap-0">
+                                    <span class="font-medium text-red-600 bg-red-50 px-2 py-0.5 rounded border border-red-100 w-fit">Saturday</span>
+                                    <span class="text-red-600 font-semibold sm:text-right">Closed</span>
                                 </li>
                             </ul>
+                        </div>
+                        <div class="border-t border-gray-200 pt-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+                                <svg class="h-5 w-5 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                                </svg>
+                                Office Location
+                            </h3>
+                            <div class="rounded-lg overflow-hidden border border-gray-200 shadow-inner mb-4">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3533.1091535492323!2d85.34185797615967!3d27.683059226569106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19a0a58b88eb%3A0x89e8f498a44b4eb2!2sTinkune%2C%20Kathmandu!5e0!3m2!1sen!2snp!4v1717387200000!5m2!1sen!2snp" width="100%" height="240" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Office Location Map"></iframe>
+                            </div>
+                            <p class="text-sm text-gray-500 leading-relaxed">
+                                <span class="font-semibold text-gray-700">Wayfinding & Access:</span> Conveniently located near Tinkune Park. Free bicycle and motorcycle parking is available on-site. Public buses drop off directly at the Tinkune bus stop, which is just a 2-minute walk from our office building.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
     <!-- Footer -->
     <footer class="bg-black text-gray-300 py-12 md:py-16 border-t border-gray-800">
@@ -444,8 +501,8 @@
                                 </svg>
                                 <h4 class="text-xs font-semibold text-white uppercase tracking-wider">Business Hours</h4>
                             </div>
-                            <p class="text-green-600 text-sm">Sunday - Friday: 10:00 AM - 5:00 PM</p>
-                            <p class="text-red-500 text-sm mt-1">Saturday: Closed</p>
+                            <p class="text-emerald-400 text-sm">Sunday - Friday: 10:00 AM - 5:00 PM</p>
+                            <p class="text-red-400 text-sm mt-1">Saturday: Closed</p>
                         </li>
                     </ul>
                 </div>

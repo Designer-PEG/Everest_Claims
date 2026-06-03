@@ -65,37 +65,47 @@
     }
     </script>
 
+    <link href="./styles.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/@heroicons/react@2.0.16/dist/index.umd.js"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
                     colors: {
                         blue: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            200: '#bae6fd',
-                            300: '#7dd3fc',
-                            400: '#38bdf8',
-                            500: '#0ea5e9',
-                            600: '#0284c7',
-                            700: '#0369a1',
-                            800: '#075985',
-                            900: '#0c4a6e',
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#2563eb',
+                            600: '#1d4ed8',
+                            700: '#1e40af',
+                            800: '#1e3a8a',
+                            900: '#172554',
                         },
                     }
                 }
             }
         }
     </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
     <style>
         body.menu-open {
             overflow: hidden;
         }
     </style>
 </head>
-<body class="bg-neutral-50">
+<body class="bg-neutral-50 text-slate-800">
+    <!-- Skip to main content for screen readers -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- Navbar -->
     <nav id="navbar" class="fixed top-0 w-full bg-white backdrop-blur-md shadow-md border-b border-gray-200 transition-all duration-300 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -174,14 +184,14 @@
         </div>
     </div>
 
-    <div class="min-h-screen bg-neutral-50 pt-20 pb-16">
+    <main id="main-content" class="min-h-screen bg-neutral-50 pt-20 pb-16">
         <!-- Hero Section -->
         <section class="relative bg-gradient-to-r from-blue-800 to-blue-600 py-20 text-white overflow-hidden">
             <div class="absolute inset-0 bg-black/30"></div>
             <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 relative z-10">
                 <div class="text-center max-w-4xl mx-auto">
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                        About <span class="text-green-500">Everest Claims</span>
+                        About <span class="text-blue-300">Everest Claims</span>
                     </h1>
                     <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
                         Pioneering excellence in insurance claims assessment across Nepal
@@ -196,7 +206,7 @@
                 <div class="grid md:grid-cols-2">
                     <div class="p-8 md:p-12">
                         <div class="flex items-center mb-6">
-                            <div class="w-12 h-1 bg-green-500 mr-4"></div>
+                            <div class="w-12 h-1 bg-blue-600 mr-4"></div>
                             <h2 class="text-2xl font-bold text-neutral-800">Our Story</h2>
                         </div>
                         <p class="text-neutral-600 mb-6 leading-relaxed">
@@ -206,7 +216,7 @@
                             Named after the world's highest peak, we embody the resilience, integrity, and towering standards that Mount Everest represents.
                         </p>
                         <p class="text-neutral-600 leading-relaxed">
-                            Had experience for surveying even before founding the company, for upholding integrity and provide transperancy, We have founded this organization.
+                            Prior to officially establishing the firm, our founders accumulated years of hands-on expertise in loss surveying and claims adjustment. We established this organization with a singular, resolute focus: to uphold absolute integrity and bring transparency to every claims assessment in Nepal.
                         </p>
                     </div>
                     <div class="hidden md:block relative">
@@ -224,7 +234,7 @@
         <section class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 mt-20">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-neutral-800 mb-4">Our Core Values</h2>
-                <div class="w-16 h-1 bg-green-500 mx-auto"></div>
+                <div class="w-16 h-1 bg-blue-600 mx-auto"></div>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
@@ -309,7 +319,7 @@
             <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl font-bold text-white mb-4">Why Choose Everest Claims</h2>
-                    <div class="w-16 h-1 bg-green-400 mx-auto"></div>
+                    <div class="w-16 h-1 bg-blue-300 mx-auto"></div>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-10">
@@ -319,7 +329,7 @@
                             <ul class="space-y-6">
                                 <li class="flex items-start">
                                     <div class="flex-shrink-0 mt-1">
-                                        <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
@@ -327,7 +337,7 @@
                                 </li>
                                 <li class="flex items-start">
                                     <div class="flex-shrink-0 mt-1">
-                                        <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
@@ -335,7 +345,7 @@
                                 </li>
                                 <li class="flex items-start">
                                     <div class="flex-shrink-0 mt-1">
-                                        <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
@@ -343,7 +353,7 @@
                                 </li>
                                 <li class="flex items-start">
                                     <div class="flex-shrink-0 mt-1">
-                                        <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
@@ -351,7 +361,7 @@
                                 </li>
                                 <li class="flex items-start">
                                     <div class="flex-shrink-0 mt-1">
-                                        <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
@@ -359,7 +369,7 @@
                                 </li>
                                 <li class="flex items-start">
                                     <div class="flex-shrink-0 mt-1">
-                                        <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
@@ -375,7 +385,7 @@
                             <div class="space-y-8">
                                 <div class="flex items-start">
                                     <div class="flex-shrink-0 p-2 bg-white/10 rounded-lg">
-                                        <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-6 h-6 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                                         </svg>
                                     </div>
@@ -386,7 +396,7 @@
                                 </div>
                                 <div class="flex items-start">
                                     <div class="flex-shrink-0 p-2 bg-white/10 rounded-lg">
-                                        <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-6 h-6 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
                                         </svg>
                                     </div>
@@ -397,7 +407,7 @@
                                 </div>
                                 <div class="flex items-start">
                                     <div class="flex-shrink-0 p-2 bg-white/10 rounded-lg">
-                                        <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-6 h-6 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                         </svg>
                                     </div>
@@ -408,7 +418,7 @@
                                 </div>
                                 <div class="flex items-start">
                                     <div class="flex-shrink-0 p-2 bg-white/10 rounded-lg">
-                                        <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-6 h-6 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
                                         </svg>
                                     </div>
@@ -430,18 +440,21 @@
                 <div class="grid md:grid-cols-2">
                     <div class="p-8 md:p-12 order-2 md:order-1">
                         <div class="flex items-center mb-6">
-                            <div class="w-12 h-1 bg-green-500 mr-4"></div>
+                            <div class="w-12 h-1 bg-blue-600 mr-4"></div>
                             <h2 class="text-2xl font-bold text-neutral-800">Leadership Message</h2>
                         </div>
                         <blockquote class="text-neutral-600 italic text-lg mb-6 border-l-4 border-blue-500 pl-4">
                             "At Everest Claims, we don't just assess damages—we restore trust."
                         </blockquote>
                         <p class="text-neutral-600 mb-6 leading-relaxed">
-                            Since our founding, we've remained committed to fair, accurate assessments.
+                            Since our founding, we've remained committed to fair, accurate assessments. With over 15 years of surveying major commercial risks for leading reinsurance projects across Asia, Suresh leads our operations with a focus on absolute impartiality and technical precision.
+                        </p>
+                        <p class="text-neutral-600 mb-6 leading-relaxed text-sm italic">
+                            *Fun fact: When not inspecting claims, Suresh is an avid high-altitude trekker who has summited Kala Patthar twice.*
                         </p>
                         <div class="mt-8">
                             <div class="flex items-center">
-                                <div class="w-16 h-16 rounded-full overflow-hidden border-4 border-white shadow-md">
+                                <div class="w-16 h-16 rounded-full overflow-hidden border-4 border-white shadow-md flex-shrink-0">
                                     <img 
                                         src="./assets/img/Suresh.png" 
                                         alt="Suresh Sharma, CEO of Everest Claims" 
@@ -449,8 +462,15 @@
                                     />
                                 </div>
                                 <div class="ml-4">
-                                    <h4 class="font-bold text-neutral-800">Suresh Sharma</h4>
-                                    <p class="text-neutral-600">Founder & CEO</p>
+                                    <h4 class="font-bold text-neutral-800 flex items-center gap-2">
+                                        Suresh Sharma
+                                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 transition-colors" aria-label="Suresh Sharma LinkedIn Profile">
+                                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                            </svg>
+                                        </a>
+                                    </h4>
+                                    <p class="text-neutral-600 text-sm">Founder & CEO | Licensed Insurance Surveyor (Govt. of Nepal)</p>
                                 </div>
                             </div>
                         </div>
@@ -465,7 +485,30 @@
                 </div>
             </div>
         </section>
-    </div>
+
+        <!-- Bottom CTA -->
+        <section class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 mt-20 mb-10">
+            <div class="gradient-blue text-white rounded-xl p-8 md:p-12 shadow-xl text-center relative overflow-hidden">
+                <div class="relative z-10 max-w-3xl mx-auto space-y-6">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Need an Impartial, Expert Survey?</h2>
+                    <p class="text-blue-100 text-lg">
+                        We work with leading insurers and policyholders to deliver bulletproof claim assessments.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4 pt-2">
+                        <a href="./contact.html" class="btn-primary bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-lg text-lg font-medium shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center">
+                            Get in Touch
+                        </a>
+                        <a href="tel:+9779851135421" class="btn-outline border-white/40 hover:border-white text-white hover:bg-white/10 px-8 py-3 rounded-lg text-lg font-medium transition-all duration-300 flex items-center justify-center">
+                            Call +977-9851135421
+                        </a>
+                    </div>
+                </div>
+                <!-- Subtle background design -->
+                <div class="absolute -right-10 -bottom-10 w-40 h-40 rounded-full bg-white/5 blur-2xl"></div>
+                <div class="absolute -left-10 -top-10 w-40 h-40 rounded-full bg-white/5 blur-2xl"></div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="bg-black text-gray-300 py-12 md:py-16 border-t border-gray-800">
@@ -566,8 +609,8 @@
                                 </svg>
                                 <h4 class="text-xs font-semibold text-white uppercase tracking-wider">Business Hours</h4>
                             </div>
-                            <p class="text-green-600 text-sm">Sunday - Friday: 10:00 AM - 5:00 PM</p>
-                            <p class="text-red-500 text-sm mt-1">Saturday: Closed</p>
+                            <p class="text-emerald-400 text-sm">Sunday - Friday: 10:00 AM - 5:00 PM</p>
+                            <p class="text-red-400 text-sm mt-1">Saturday: Closed</p>
                         </li>
                     </ul>
                 </div>

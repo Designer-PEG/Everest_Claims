@@ -4,7 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Careers - Everest Claims & Advisory</title>
+    <meta name="description" content="Join the team at Everest Claims & Advisory. Explore career opportunities for surveyors, claim auditors, legal analysts, and risk managers in Nepal.">
+    <meta name="keywords" content="insurance jobs, careers Nepal, surveyor jobs, risk management, claim auditor Kathmandu">
+    <link href="./styles.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        blue: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#2563eb',
+                            600: '#1d4ed8',
+                            700: '#1e40af',
+                            800: '#1e3a8a',
+                            900: '#172554',
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@heroicons/react@2.0.16/dist/index.umd.js"></script>
     <script src="https://unpkg.com/react-hot-toast@2.4.1/dist/react-hot-toast.js"></script>
     <style>
@@ -14,6 +46,7 @@
     </style>
 </head>
 <body class="bg-gray-50">
+    <a href="#main-content" class="skip-link">Skip to Main Content</a>
     <!-- Navbar -->
     <nav id="navbar" class="fixed top-0 w-full bg-white backdrop-blur-md shadow-md border-b border-gray-200 transition-all duration-300 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -51,9 +84,9 @@
                 </div>
 
                 <!-- Mobile menu toggle -->
-                <div class="md:hidden flex items-center z-60">
+                <div class="md:hidden flex items-center">
                     <button id="mobile-menu-toggle" class="outline-none" aria-label="Toggle menu">
-                        <svg id="menu-icon" class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                         </svg>
                     </button>
@@ -64,7 +97,6 @@
 
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="fixed inset-0 z-40 hidden">
-        <div class="absolute inset-0 backdrop-blur-lg bg-black/50"></div>
         <button id="close-menu" class="absolute top-6 right-6 text-white text-3xl z-50" aria-label="Close menu">
             &times;
         </button>
@@ -93,7 +125,7 @@
     </div>
 
     <!-- Main Content -->
-    <div class="bg-gray-50 min-h-screen pt-16">
+    <main id="main-content" class="bg-gray-50 min-h-screen pt-16">
         <!-- Toast Notifications Container -->
         <div id="toast-container" class="fixed top-4 left-0 right-0 flex justify-center z-50 pointer-events-none"></div>
 
@@ -221,7 +253,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
     <!-- Footer -->
     <footer class="bg-black text-gray-300 py-12 md:py-16 border-t border-gray-800">
@@ -322,8 +354,8 @@
                                 </svg>
                                 <h4 class="text-xs font-semibold text-white uppercase tracking-wider">Business Hours</h4>
                             </div>
-                            <p class="text-green-600 text-sm">Sunday - Friday: 10:00 AM - 5:00 PM</p>
-                            <p class="text-red-500 text-sm mt-1">Saturday: Closed</p>
+                            <p class="text-emerald-400 text-sm">Sunday - Friday: 10:00 AM - 5:00 PM</p>
+                            <p class="text-red-400 text-sm mt-1">Saturday: Closed</p>
                         </li>
                     </ul>
                 </div>
@@ -358,23 +390,54 @@
 
     <script>
         // Sample career data for job posting
-        // const careerData = [
-        //     {
-        //         "id": 1,
-        //         "title": "Example Title - IT and Software Manager",
-        //         "department": "IT",
-        //         "location": "Kathmandu",
-        //         "type": "Full-time",
-        //         "description": "This should hold the example ",
-        //         "requirements": [
-        //             "Bachelor's degree in Business, Finance or related field",
-        //             "2+ years experience in claims adjusting",
-        //             "Strong analytical and negotiation skills",
-        //             "Excellent communication skills"
-        //         ],
-        //         "posted": "2023-05-15"
-        //     }
-        // ];
+        const careerData = [
+            {
+                "id": "1",
+                "title": "Senior Property Surveyor",
+                "department": "Survey & Loss Assessment",
+                "location": "Kathmandu, Nepal",
+                "type": "Full-time",
+                "description": "We are seeking a licensed and experienced Senior Property Surveyor to conduct detailed damage assessments, verify policy coverage limits, and produce high-quality survey reports for commercial property claims.",
+                "requirements": [
+                    "Government-licensed Surveyor (Beema Samiti / Insurance Authority licensed preferred)",
+                    "Bachelor's degree in Civil Engineering or related field",
+                    "Minimum 5 years of active property surveying and claim adjustment experience",
+                    "Exceptional report writing skills and command of technical specifications",
+                    "Willingness to travel to loss sites across Nepal on short notice"
+                ],
+                "posted": "2026-05-20"
+            },
+            {
+                "id": "2",
+                "title": "Claims Auditor & Legal Analyst",
+                "department": "Legal & Advisory",
+                "location": "Kathmandu, Nepal (Hybrid)",
+                "type": "Full-time",
+                "description": "Join our legal advisory division to audit denied or disputed insurance claims, analyze insurance contracts, and formulate strategic legal claims positions to advocate for fair settlements.",
+                "requirements": [
+                    "Bachelor of Laws (LLB) degree; Masters (LLM) or specializing in Corporate/Insurance law is a plus",
+                    "3+ years of experience auditing claims within an insurance firm or law firm",
+                    "Deep knowledge of Nepalese insurance regulations and civil litigation practices",
+                    "Impeccable analytical, advocacy, and negotiation skills"
+                ],
+                "posted": "2026-05-25"
+            },
+            {
+                "id": "3",
+                "title": "Risk Management Specialist",
+                "department": "Risk Engineering",
+                "location": "Kathmandu, Nepal",
+                "type": "Contract / Project-based",
+                "description": "Conduct industrial risk inspections, hazard identification, and safety audits for large-scale energy, construction, and manufacturing clients to optimize their risk portfolios and insurance coverage.",
+                "requirements": [
+                    "Degree in Industrial Safety, Mechanical Engineering, or Risk Management",
+                    "Certified Risk Management professional or equivalent credentials",
+                    "Experience conducting risk audits for infrastructure projects (hydropower, highways, factories)",
+                    "Strong consulting acumen and presentation skills"
+                ],
+                "posted": "2026-06-01"
+            }
+        ];
 
         // Mobile menu functionality
         const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
@@ -493,7 +556,7 @@
             const toast = document.createElement('div');
             
             toast.className = `bg-white rounded-lg shadow-lg p-4 max-w-md w-full pointer-events-auto flex items-start mb-2 transition-all duration-300 ${
-                type === 'success' ? 'border-l-4 border-green-500' : 'border-l-4 border-red-500'
+                type === 'success' ? 'border-l-4 border-emerald-600' : 'border-l-4 border-red-500'
             }`;
             
             toast.innerHTML = message;
@@ -539,7 +602,7 @@
                 // Show success toast
                 const successMessage = `
                     <div class="flex items-start">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6 text-green-500 mr-2 mt-0.5 flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6 text-emerald-600 mr-2 mt-0.5 flex-shrink-0">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                         <div>
@@ -624,7 +687,7 @@
                                     <ul class="mt-3 space-y-2">
                                         ${job.requirements.map(req => `
                                             <li class="flex items-start">
-                                                <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <svg class="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                                                 </svg>
                                                 <span class="text-gray-700">${req}</span>

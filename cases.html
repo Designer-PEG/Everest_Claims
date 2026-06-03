@@ -24,8 +24,8 @@
     <link rel="canonical" href="https://everestclaims.com/cases.html">
     
     <!-- Favicon -->
-    <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/apple-touch-icon.png">
+    <link rel="icon" href="./assets/img/logo.png" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/logo.png">
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -46,9 +46,40 @@
     }
     </script>
     
+    <link href="./styles.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        blue: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#2563eb',
+                            600: '#1d4ed8',
+                            700: '#1e40af',
+                            800: '#1e3a8a',
+                            900: '#172554',
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 </head>
 <body class="bg-gray-50">
+    <a href="#main-content" class="skip-link">Skip to Main Content</a>
     <!-- Navbar -->
     <nav id="navbar" class="fixed top-0 w-full bg-white backdrop-blur-md shadow-md border-b border-gray-200 transition-all duration-300 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -128,13 +159,13 @@
     </div>
 
     <!-- Main Content -->
-    <div class="min-h-screen mt-12 bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <main id="main-content" class="min-h-screen mt-12 bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12">
-                <h1 class="text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
+                <h1 class="text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl animate-fade-in">
                     Case Studies
                 </h1>
-                <p class="mt-5 max-w-xl mx-auto text-xl text-gray-500">
+                <p class="mt-5 max-w-xl mx-auto text-xl text-gray-500 animate-slide-up">
                     Explore our recent investigations and how we've helped clients resolve complex insurance claims.
                 </p>
             </div>
@@ -154,210 +185,25 @@
                 </div>
             </div>
 
-            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                <!-- Case Study 1 -->
-                <div class="flex flex-col rounded-lg shadow-lg overflow-hidden bg-white transform transition-all hover:scale-105 hover:shadow-xl">
-                    <div class="flex-1 p-6 flex flex-col justify-between">
-                        <div class="flex-1">
-                            <p class="text-sm font-medium text-indigo-600">
-                                Property Damage
-                            </p>
-                            <h3 class="mt-2 text-xl font-semibold text-gray-900">
-                                Warehouse Fire Investigation
-                            </h3>
-                            <p class="mt-3 text-base text-gray-500">
-                                Comprehensive investigation of a major warehouse fire that destroyed $12M in inventory. Our team determined the cause to be electrical faults in the HVAC system, leading to a successful claim settlement.
-                            </p>
-                        </div>
-                        <div class="mt-6 flex items-center">
-                            <div class="flex-shrink-0">
-                                <svg class="h-10 w-10 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </div>
-                            <div class="ml-3">
-                                <p class="text-sm font-medium text-gray-900">
-                                    <span class="font-bold">Outcome:</span> Client recovered 92% of claimed amount
-                                </p>
-                                <div class="flex space-x-1 text-sm text-gray-500">
-                                    <time datetime="March 2024">
-                                        March 2024
-                                    </time>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <!-- Interactive Category Filter Bar -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12" id="filter-bar" role="tablist" aria-label="Filter case studies by category">
+                <button onclick="filterCases('All')" class="filter-btn active px-5 py-2.5 text-sm font-semibold rounded-full bg-blue-600 text-white shadow-md hover:bg-blue-700 transition-all duration-200" role="tab" aria-selected="true" data-category="All">
+                    All Case Studies
+                </button>
+                <button onclick="filterCases('Property Damage')" class="filter-btn px-5 py-2.5 text-sm font-medium rounded-full bg-white text-gray-700 hover:bg-gray-100 hover:text-gray-950 border border-gray-200 transition-all duration-200" role="tab" aria-selected="false" data-category="Property Damage">
+                    Property Damage
+                </button>
+                <button onclick="filterCases('Marine Cargo')" class="filter-btn px-5 py-2.5 text-sm font-medium rounded-full bg-white text-gray-700 hover:bg-gray-100 hover:text-gray-950 border border-gray-200 transition-all duration-200" role="tab" aria-selected="false" data-category="Marine Cargo">
+                    Marine Cargo
+                </button>
+                <button onclick="filterCases('Fraud Detection')" class="filter-btn px-5 py-2.5 text-sm font-medium rounded-full bg-white text-gray-700 hover:bg-gray-100 hover:text-gray-950 border border-gray-200 transition-all duration-200" role="tab" aria-selected="false" data-category="Fraud Detection">
+                    Fraud Detection
+                </button>
+            </div>
 
-                <!-- Case Study 2 -->
-                <div class="flex flex-col rounded-lg shadow-lg overflow-hidden bg-white transform transition-all hover:scale-105 hover:shadow-xl">
-                    <div class="flex-1 p-6 flex flex-col justify-between">
-                        <div class="flex-1">
-                            <p class="text-sm font-medium text-indigo-600">
-                                Marine Insurance
-                            </p>
-                            <h3 class="mt-2 text-xl font-semibold text-gray-900">
-                                Marine Cargo Loss Assessment
-                            </h3>
-                            <p class="mt-3 text-base text-gray-500">
-                                Assessment of damaged cargo during transatlantic shipping. Our detailed analysis proved improper stowage rather than weather conditions as the primary cause, significantly impacting liability.
-                            </p>
-                        </div>
-                        <div class="mt-6 flex items-center">
-                            <div class="flex-shrink-0">
-                                <svg class="h-10 w-10 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </div>
-                            <div class="ml-3">
-                                <p class="text-sm font-medium text-gray-900">
-                                    <span class="font-bold">Outcome:</span> Liability shifted to shipping company
-                                </p>
-                                <div class="flex space-x-1 text-sm text-gray-500">
-                                    <time datetime="November 2024">
-                                        November 2024
-                                    </time>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Case Study 3 -->
-                <div class="flex flex-col rounded-lg shadow-lg overflow-hidden bg-white transform transition-all hover:scale-105 hover:shadow-xl">
-                    <div class="flex-1 p-6 flex flex-col justify-between">
-                        <div class="flex-1">
-                            <p class="text-sm font-medium text-indigo-600">
-                                Fraud Investigation
-                            </p>
-                            <h3 class="mt-2 text-xl font-semibold text-gray-900">
-                                Automotive Fraud Detection
-                            </h3>
-                            <p class="mt-3 text-base text-gray-500">
-                                Investigation of suspicious claim involving a luxury vehicle total loss. Our forensic examination revealed staged accident evidence, saving the insurer $285,000 in fraudulent claims.
-                            </p>
-                        </div>
-                        <div class="mt-6 flex items-center">
-                            <div class="flex-shrink-0">
-                                <svg class="h-10 w-10 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </div>
-                            <div class="ml-3">
-                                <p class="text-sm font-medium text-gray-900">
-                                    <span class="font-bold">Outcome:</span> Claim denied based on our evidence
-                                </p>
-                                <div class="flex space-x-1 text-sm text-gray-500">
-                                    <time datetime="July 2024">
-                                        July 2024
-                                    </time>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Case Study 4 -->
-                <div class="flex flex-col rounded-lg shadow-lg overflow-hidden bg-white transform transition-all hover:scale-105 hover:shadow-xl">
-                    <div class="flex-1 p-6 flex flex-col justify-between">
-                        <div class="flex-1">
-                            <p class="text-sm font-medium text-indigo-600">
-                                Business Insurance
-                            </p>
-                            <h3 class="mt-2 text-xl font-semibold text-gray-900">
-                                Business Interruption Analysis
-                            </h3>
-                            <p class="mt-3 text-base text-gray-500">
-                                Evaluation of business interruption claims following a regional flood. Our economic modeling accurately calculated losses, resulting in fair compensation for affected businesses.
-                            </p>
-                        </div>
-                        <div class="mt-6 flex items-center">
-                            <div class="flex-shrink-0">
-                                <svg class="h-10 w-10 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </div>
-                            <div class="ml-3">
-                                <p class="text-sm font-medium text-gray-900">
-                                    <span class="font-bold">Outcome:</span> $4.2M in claims properly evaluated
-                                </p>
-                                <div class="flex space-x-1 text-sm text-gray-500">
-                                    <time datetime="January 2025">
-                                        January 2025
-                                    </time>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Case Study 5 -->
-                <div class="flex flex-col rounded-lg shadow-lg overflow-hidden bg-white transform transition-all hover:scale-105 hover:shadow-xl">
-                    <div class="flex-1 p-6 flex flex-col justify-between">
-                        <div class="flex-1">
-                            <p class="text-sm font-medium text-indigo-600">
-                                Workers Compensation
-                            </p>
-                            <h3 class="mt-2 text-xl font-semibold text-gray-900">
-                                Construction Site Accident
-                            </h3>
-                            <p class="mt-3 text-base text-gray-500">
-                                Detailed assessment of a fatal accident at a high-rise construction site. Our safety audit identified multiple protocol violations that affected the liability determination.
-                            </p>
-                        </div>
-                        <div class="mt-6 flex items-center">
-                            <div class="flex-shrink-0">
-                                <svg class="h-10 w-10 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </div>
-                            <div class="ml-3">
-                                <p class="text-sm font-medium text-gray-900">
-                                    <span class="font-bold">Outcome:</span> Liability appropriately allocated
-                                </p>
-                                <div class="flex space-x-1 text-sm text-gray-500">
-                                    <time datetime="September 2025">
-                                        September 2025
-                                    </time>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Case Study 6 -->
-                <div class="flex flex-col rounded-lg shadow-lg overflow-hidden bg-white transform transition-all hover:scale-105 hover:shadow-xl">
-                    <div class="flex-1 p-6 flex flex-col justify-between">
-                        <div class="flex-1">
-                            <p class="text-sm font-medium text-indigo-600">
-                                Cyber Insurance
-                            </p>
-                            <h3 class="mt-2 text-xl font-semibold text-gray-900">
-                                Cyber Attack Loss Valuation
-                            </h3>
-                            <p class="mt-3 text-base text-gray-500">
-                                Assessment of financial impacts from a ransomware attack on a mid-sized retailer. Our IT forensic team traced the attack vector while our financial analysts quantified the business losses.
-                            </p>
-                        </div>
-                        <div class="mt-6 flex items-center">
-                            <div class="flex-shrink-0">
-                                <svg class="h-10 w-10 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </div>
-                            <div class="ml-3">
-                                <p class="text-sm font-medium text-gray-900">
-                                    <span class="font-bold">Outcome:</span> Accurate claim valuation established
-                                </p>
-                                <div class="flex space-x-1 text-sm text-gray-500">
-                                    <time datetime="May 2025">
-                                        May 2025
-                                    </time>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <!-- Dynamic Cases Grid -->
+            <div id="cases-grid" class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 min-h-[300px]">
+                <!-- Loaded Dynamically by JS -->
             </div>
 
             <div class="mt-12 text-center">
@@ -374,7 +220,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
     <!-- Footer -->
     <footer class="bg-black text-gray-300 py-12 md:py-16 border-t border-gray-800">
@@ -475,8 +321,8 @@
                                 </svg>
                                 <h4 class="text-xs font-semibold text-white uppercase tracking-wider">Business Hours</h4>
                             </div>
-                            <p class="text-green-600 text-sm">Sunday - Friday: 10:00 AM - 5:00 PM</p>
-                            <p class="text-red-500 text-sm mt-1">Saturday: Closed</p>
+                            <p class="text-emerald-400 text-sm">Sunday - Friday: 10:00 AM - 5:00 PM</p>
+                            <p class="text-red-400 text-sm mt-1">Saturday: Closed</p>
                         </li>
                     </ul>
                 </div>
@@ -625,6 +471,151 @@
         document.addEventListener('DOMContentLoaded', setActiveNav);
         window.addEventListener('popstate', setActiveNav);
 
+        // Case Studies Data
+        const casesData = [
+            {
+                id: 1,
+                category: "Property Damage",
+                title: "Warehouse Fire Investigation",
+                description: "Comprehensive investigation of a major warehouse fire that destroyed $12M in industrial inventory. Our team determined the cause to be electrical faults in the HVAC system, leading to a successful claim settlement.",
+                outcome: "92% Recovery",
+                outcomeType: "success",
+                date: "March 2024",
+                icon: `<svg class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>`
+            },
+            {
+                id: 2,
+                category: "Marine Cargo",
+                title: "Marine Cargo Loss Assessment",
+                description: "Assessment of damaged heavy machinery cargo during transatlantic shipping. Our detailed analysis proved improper stowage rather than heavy weather conditions as the primary cause, shifting liability to the carrier.",
+                outcome: "Liability Shifted",
+                outcomeType: "info",
+                date: "November 2024",
+                icon: `<svg class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h8a1 1 0 001-1zm0 0h5l3 3V8h-8v8z"/></svg>`
+            },
+            {
+                id: 3,
+                category: "Fraud Detection",
+                title: "Automotive Fraud Detection",
+                description: "Forensic investigation of a suspicious claim involving a luxury vehicle total loss. Our forensic examination revealed staged accident evidence and pre-existing vehicle damage, saving the insurer $285,000.",
+                outcome: "Claim Denied",
+                outcomeType: "danger",
+                date: "July 2024",
+                icon: `<svg class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 00-2 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>`
+            },
+            {
+                id: 4,
+                category: "Property Damage",
+                title: "Business Interruption Analysis",
+                description: "Evaluation of business interruption claims following a regional flood. Our economic modeling accurately calculated business losses, resulting in fair compensation for affected commercial businesses.",
+                outcome: "Claims Resolved",
+                outcomeType: "info",
+                date: "January 2025",
+                icon: `<svg class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>`
+            },
+            {
+                id: 5,
+                category: "Property Damage",
+                title: "Construction Site Accident",
+                description: "Detailed safety compliance assessment of a serious accident at a high-rise construction site in Pokhara. Our safety audit identified multiple scaffolding violations that affected liability distribution.",
+                outcome: "Liability Allocated",
+                outcomeType: "info",
+                date: "September 2025",
+                icon: `<svg class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>`
+            },
+            {
+                id: 6,
+                category: "Fraud Detection",
+                title: "Cyber Attack Loss Valuation",
+                description: "Assessment of financial impacts from a ransomware attack on a mid-sized retailer. Our IT forensic team traced the ransomware entry vector while our financial analysts quantified the business interruption losses.",
+                outcome: "Valuation Verified",
+                outcomeType: "success",
+                date: "May 2025",
+                icon: `<svg class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>`
+            }
+        ];
+
+        // Render Case Studies Grid
+        function renderCaseStudies(filter = "All") {
+            const gridContainer = document.getElementById("cases-grid");
+            const filteredCases = filter === "All" 
+                ? casesData 
+                : casesData.filter(c => c.category === filter);
+            
+            if (filteredCases.length === 0) {
+                gridContainer.innerHTML = `
+                    <div class="col-span-full text-center py-16">
+                        <p class="text-lg text-gray-500 font-medium">No case studies found in this category.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            gridContainer.innerHTML = filteredCases.map(c => {
+                let badgeClass = "bg-blue-50 text-blue-700 border-blue-100"; // default info
+                if (c.outcomeType === "success") {
+                    badgeClass = "bg-emerald-50 text-emerald-700 border-emerald-100";
+                } else if (c.outcomeType === "danger") {
+                    badgeClass = "bg-red-50 text-red-700 border-red-100";
+                }
+
+                return `
+                    <article class="flex flex-col rounded-xl shadow-md overflow-hidden bg-white hover-lift border border-gray-100 animate-slide-up">
+                        <div class="flex-1 p-6 sm:p-8 flex flex-col justify-between">
+                            <div class="flex-1">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
+                                        ${c.category}
+                                    </span>
+                                    <span class="text-xs text-gray-500">${c.date}</span>
+                                </div>
+                                <h3 class="mt-4 text-xl font-bold text-gray-900 leading-snug">
+                                    ${c.title}
+                                </h3>
+                                <p class="mt-3 text-sm text-gray-600 leading-relaxed max-w-[65ch]">
+                                    ${c.description}
+                                </p>
+                            </div>
+                            <div class="mt-6 pt-5 border-t border-gray-100 flex items-center justify-between">
+                                <div class="flex items-center space-x-2">
+                                    <div class="flex-shrink-0 h-10 w-10 bg-blue-50 rounded-lg flex items-center justify-center">
+                                        ${c.icon}
+                                    </div>
+                                    <div class="text-left">
+                                        <p class="text-xs font-medium text-gray-500">Case Outcome</p>
+                                        <span class="inline-flex mt-0.5 px-2.5 py-1 text-xs font-semibold rounded-full border ${badgeClass}">
+                                            ${c.outcome}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                `;
+            }).join('');
+        }
+
+        // Filter Functionality
+        function filterCases(category) {
+            // Update active state in UI filter buttons
+            const buttons = document.querySelectorAll(".filter-btn");
+            buttons.forEach(btn => {
+                const btnCat = btn.getAttribute("data-category");
+                if (btnCat === category) {
+                    btn.classList.add("active", "bg-blue-600", "text-white", "shadow-md");
+                    btn.classList.remove("bg-white", "text-gray-700");
+                    btn.setAttribute("aria-selected", "true");
+                } else {
+                    btn.classList.remove("active", "bg-blue-600", "text-white", "shadow-md");
+                    btn.classList.add("bg-white", "text-gray-700");
+                    btn.setAttribute("aria-selected", "false");
+                }
+            });
+
+            // Re-render grid
+            renderCaseStudies(category);
+        }
+
         // Set current year in footer
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
@@ -640,6 +631,12 @@
         
         scrollToTopButton.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Initial Load
+        document.addEventListener('DOMContentLoaded', () => {
+            setActiveNav();
+            renderCaseStudies();
         });
     </script>
 </body>
