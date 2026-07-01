@@ -1,0 +1,95 @@
+/* ========================================
+   Scroll Reveal Helper Classes
+   ======================================== */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), 
+              transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+
+/* Slide-up animation class for scroll reveals */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-up {
+  animation: slideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+/* ========================================
+   Decorative Background Blobs
+   ======================================== */
+.bg-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.06;
+  z-index: 0;
+  pointer-events: none;
+}
+.bg-blob-red {
+  background-color: var(--color-red);
+}
+.bg-blob-green {
+  background-color: var(--color-green);
+}
+
+/* ========================================
+   Float Animation
+   ======================================== */
+@keyframes float {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ========================================
+   Infinite Marquee Keyframe
+   ======================================== */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ========================================
+   Border Color Custom Properties
+   (ensures Tailwind borderColor works)
+   ======================================== */
+:root {
+  --border-color: #e8e5e0;
+}
+
+/* ========================================
+   Creative Accent Line
+   ======================================== */
+.creative-accent-line {
+  position: relative;
+  display: inline-block;
+}
+.creative-accent-line::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  background-color: var(--color-red);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+.creative-accent-line:hover::after {
+  width: 60px;
+}

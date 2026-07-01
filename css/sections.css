@@ -1,0 +1,351 @@
+/* Hero Section Specification */
+.hero {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-ink);
+  color: #fff;
+}
+
+.hero h1, .hero p, .hero span {
+  color: #fff !important;
+}
+
+.hero .btn-outline {
+  color: #fff !important;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+.hero .btn-outline:hover {
+  border-color: var(--color-red);
+  background-color: rgba(203, 62, 45, 0.1);
+}
+
+/* Scroll Cue animation */
+.scroll-cue {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 10;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity var(--transition-fast);
+}
+
+.scroll-cue:hover {
+  opacity: 1;
+}
+
+.scroll-cue-line {
+  width: 2px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--color-surface), transparent);
+  animation: scrollLine 2s infinite ease-in-out;
+}
+
+@keyframes scrollLine {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  50.1% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* Page Header banners for subpages to maintain header transition alignment */
+.page-header-banner {
+  background-color: var(--color-ink);
+  color: #fff;
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.page-header-banner h1, .page-header-banner p {
+  color: #fff !important;
+}
+
+/* Visual Differentiators for Sections */
+.section-why-us {
+  background-color: var(--color-paper);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.section-who-serve {
+  background-color: var(--color-surface);
+}
+
+.section-vision {
+  background-color: var(--color-ink);
+  color: #fff;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.section-vision h2, .section-vision h3, .section-vision p {
+  color: #fff !important;
+}
+.section-vision .glass-panel {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.section-vision .glass-panel:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(203, 62, 45, 0.4);
+}
+
+/* ========================================
+   Connected Timeline (Process Steps)
+   The line connects badge-center-to-badge-center.
+   Badge = w-12 (48px). Each grid col starts at left edge.
+   Badge center = col-start + 24px.
+   ======================================== */
+
+/* --- Desktop Horizontal Timeline --- */
+@media (min-width: 1024px) {
+  .timeline-line-horizontal {
+    position: absolute;
+    top: 24px;            /* vertical center of 48px badge */
+    height: 2px;
+    background: var(--border-color);
+    z-index: 0;
+  }
+
+  /* 4-column grid: each column = 25%.
+     Badge center of col 1 = 0% + 24px from col start
+     Badge center of col 4 = 75% + 24px from col start
+     With gap-12 (3rem = 48px), the grid gap pushes columns.
+     Use a simpler approach: inset from each side by half a column width,
+     then offset by the badge radius. */
+  .timeline-4-steps .timeline-line-horizontal {
+    /* col-center-1 to col-center-4: exact calculation accounting for grid gaps */
+    left: calc(12.5% - 18px);
+    right: calc(12.5% - 18px);
+  }
+
+  .timeline-5-steps .timeline-line-horizontal {
+    /* col-center-1 to col-center-5: exact calculation accounting for grid gaps */
+    left: calc(10% - 19.2px);
+    right: calc(10% - 19.2px);
+  }
+
+  .timeline-line-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: var(--color-green);
+    width: 0%;
+    transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+/* --- Mobile Vertical Timeline --- */
+@media (max-width: 1023px) {
+  .timeline-line-vertical {
+    position: absolute;
+    left: 24px;   /* center of w-12 badge */
+    top: 24px;    /* start at center of first badge */
+    bottom: 24px; /* end at center of last badge */
+    width: 2px;
+    background: var(--border-color);
+    z-index: 0;
+  }
+  .timeline-line-progress-vertical {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: var(--color-green);
+    height: 0%;
+    transition: height 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+/* Timeline badge active state */
+.timeline-step.active .timeline-badge {
+  background-color: var(--color-green) !important;
+  color: #fff !important;
+  border-color: var(--color-green) !important;
+  box-shadow: 0 0 0 4px rgba(47, 114, 67, 0.15);
+  transition: all 0.4s ease;
+}
+
+/* FAQ Accordion Transitions */
+.faq-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+.faq-content-inner {
+  min-height: 0;
+  opacity: 0;
+  transition: opacity 250ms ease 50ms;
+}
+.faq-content.open {
+  grid-template-rows: 1fr;
+}
+.faq-content.open .faq-content-inner {
+  opacity: 1;
+}
+
+/* FAQ button hover */
+.faq-btn {
+  position: relative;
+}
+.faq-btn::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: transparent;
+  transition: background 200ms ease;
+  border-radius: 0 2px 2px 0;
+}
+.faq-btn[aria-expanded="true"]::before {
+  background: var(--color-red);
+}
+
+/* Infinite Marquee */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* CEO Profile / Team Image Overlay Frame */
+.ceo-image-frame {
+  position: relative;
+  display: inline-block;
+}
+.ceo-image-frame::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: -12px;
+  bottom: -12px;
+  border: 2px solid var(--color-green);
+  border-radius: var(--radius-sm);
+  z-index: 0;
+  transition: all 0.3s ease;
+}
+.ceo-image-frame:hover::before {
+  transform: translate(-4px, -4px);
+  border-color: var(--color-red);
+}
+.ceo-image-actual {
+  position: relative;
+  z-index: 10;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+}
+
+/* ========================================
+   Testimonial Carousel — Premium Design
+   ======================================== */
+.testimonial-section {
+  position: relative;
+}
+
+.testimonial-card {
+  width: 100%;
+  flex-shrink: 0;
+  padding: 0 1rem;
+}
+
+.testimonial-card blockquote {
+  font-family: var(--font-devanagari), var(--font-display);
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+  position: relative;
+  font-size: 1.125rem;
+}
+
+.testimonial-card cite {
+  font-family: var(--font-devanagari), var(--font-body);
+}
+
+/* Large decorative quotation mark */
+.testimonial-quote-mark {
+  font-family: Georgia, serif;
+  font-size: 5rem;
+  line-height: 1;
+  color: var(--color-red);
+  opacity: 0.12;
+  position: absolute;
+  top: -1.5rem;
+  left: -0.5rem;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Star rating display */
+.testimonial-stars {
+  display: flex;
+  gap: 2px;
+  color: #f59e0b;
+}
+.testimonial-stars svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+/* Slide indicator dots */
+.testimonial-dots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.testimonial-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border-color);
+  border: none;
+  cursor: pointer;
+  transition: all 200ms ease;
+  padding: 0;
+  min-height: auto;
+  min-width: auto;
+}
+.testimonial-dot.active {
+  background: var(--color-red);
+  width: 24px;
+  border-radius: 4px;
+}
+
+/* Navigation buttons premium style */
+.testimonial-nav-btn {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border-color);
+  background: var(--color-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 200ms ease;
+  border-radius: var(--radius-sm);
+  color: var(--color-ink);
+}
+.testimonial-nav-btn:hover {
+  border-color: var(--color-red);
+  color: var(--color-red);
+  background: rgba(203, 62, 45, 0.04);
+}

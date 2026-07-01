@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Not Found | Everest Claims & Advisory</title>
     <meta http-equiv="refresh" content="5; url=index.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="./assets/img/logo.png" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/logo.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <link href="./styles.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -12,93 +22,158 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        heading: ['Outfit', 'sans-serif'],
+                        sans: ['var(--font-body)', 'sans-serif'],
+                        heading: ['var(--font-display)', 'serif'],
+                        devanagari: ['var(--font-devanagari)', 'sans-serif'],
                     },
                     colors: {
-                        blue: {
-                            50: '#eff6ff',
-                            100: '#dbeafe',
-                            200: '#bfdbfe',
-                            300: '#93c5fd',
-                            400: '#60a5fa',
-                            500: '#2563eb',
-                            600: '#1d4ed8',
-                            700: '#1e40af',
-                            800: '#1e3a8a',
-                            900: '#172554',
-                        },
+                        brandRed: 'var(--color-red)',
+                        brandRedDark: 'var(--color-red-dark)',
+                        brandGreen: 'var(--color-green)',
+                        brandGreenDark: 'var(--color-green-dark)',
+                        warmWhite: 'var(--color-paper)',
+                        pureWhite: 'var(--color-surface)',
+                        darkText: 'var(--color-ink)',
+                        lightGray: 'var(--color-paper)',
+                        borderColor: 'var(--border-color)',
+                        mutedText: 'var(--color-muted)',
+                        accentRedComp: 'var(--color-teal-accent)',
+                        accentGreenComp: 'var(--color-plum-accent)',
+                        successColor: 'var(--success)',
+                        warningColor: 'var(--warning)',
+                        errorColor: 'var(--error)'
                     }
                 }
             }
         }
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
-    <style>
-        .menu-open {
-            overflow: hidden;
-        }
-        .countdown {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--blue-600);
-        }
-    </style>
 </head>
-<body class="bg-gray-50">
+<body class="font-sans antialiased text-darkText bg-pureWhite min-h-screen flex flex-col justify-between">
     <a href="#main-content" class="skip-link">Skip to Main Content</a>
+    
     <!-- Navbar -->
-    <nav id="navbar" class="fixed top-0 w-full bg-white backdrop-blur-md shadow-md border-b border-gray-200 transition-all duration-300 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-3">
-                <!-- Logo -->
-                <div class="flex items-center space-x-2 z-60">
-                    <a href="index.html" class="flex items-center">
-                        <img src="./assets/img/logo.png" alt="Everest Claims & Advisory Logo" class="h-12 w-auto">
-                        <span class="hidden sm:block font-semibold text-xl text-gray-800 ml-2">
-                            Everest Claims & Advisory
-                        </span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- 404 Content -->
-    <main id="main-content" class="min-h-screen pt-32 pb-16 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
-        <div class="max-w-3xl mx-auto text-center">
-            <div class="mb-12">
-                <h1 class="text-9xl font-bold text-blue-600 mb-4">404</h1>
-                <h2 class="text-4xl font-bold text-gray-900 mb-6">Page Not Found</h2>
-                <p class="text-xl text-gray-600 mb-4">
-                    The page you're looking for doesn't exist or has been moved.
-                </p>
-                <p class="text-lg text-gray-500 mb-8">
-                    You will be automatically redirected to the homepage in <span id="countdown" class="countdown">5</span> seconds.
-                </p>
-            </div>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="index.html" class="px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors">
-                    Go to Homepage Now
+    <header id="siteHeader" class="site-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2 z-50">
+                <a href="index.html" class="flex items-center">
+                    <img src="./assets/img/logo.png" alt="Everest Claims Logo" class="logo-img h-10 sm:h-12 w-auto transition-transform hover:scale-105">
+                    <span class="logo-text font-heading font-bold text-lg sm:text-xl ml-2 tracking-tight">
+                        Everest Claims
+                    </span>
                 </a>
             </div>
-            <div class="mt-16">
-                <svg class="w-64 h-64 mx-auto text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
+        </div>
+    </header>
+
+    <!-- 404 Content -->
+    <main id="main-content" class="flex-grow pt-32 pb-16 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+        <div class="max-w-xl w-full bg-pureWhite rounded-sm border border-borderColor p-8 sm:p-12 text-center scroll-reveal animate-slide-up">
+            <div class="mb-8">
+                <span class="text-xs font-semibold text-brandRed bg-[#CB3E2D]/10 px-3 py-1 rounded-full uppercase tracking-wider">Error 404</span>
+                <h1 class="text-8xl sm:text-9xl font-bold text-brandRed mt-4 tracking-tight">404</h1>
+                <h2 class="text-2xl sm:text-3xl font-bold text-darkText mt-2 mb-4">Page Not Found</h2>
+                <p class="text-mutedText leading-relaxed text-sm sm:text-base mb-6">
+                    The page you're looking for doesn't exist or has been moved.
+                </p>
+                <div class="inline-flex items-center gap-2 bg-lightGray border border-borderColor px-4 py-2.5 rounded-sm text-xs sm:text-sm text-mutedText font-medium">
+                    <svg class="w-4 h-4 text-brandRed animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                    </svg>
+                    <span>Redirecting to homepage in <span id="countdown" class="font-bold text-darkText text-base mx-0.5">5</span> seconds...</span>
+                </div>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="index.html" class="px-6 py-3 bg-brandRed hover:bg-[#ab3325] text-white rounded-sm font-semibold shadow-md transition-all duration-300 text-sm">
+                    Go to Homepage Now
+                </a>
             </div>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-black text-gray-300 py-12 md:py-16 border-t border-gray-800">
+    <!-- Footer -->
+    <footer class="site-footer">
         <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
-            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-gray-500 text-xs order-2 md:order-1">
-                    © <span id="current-year"></span> Everest Claims and Advisory Pvt. Ltd. All rights reserved.
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 text-left">
+                <!-- Column 1: Logo & Tagline -->
+                <div class="flex flex-col items-start space-y-5">
+                    <div class="flex items-center space-x-3">
+                        <img src="./assets/img/logo.png" alt="Everest Claims and Advisory Logo" class="h-10 w-auto" />
+                        <span class="text-xl font-heading font-bold text-white tracking-tight">Everest Claims</span>
+                    </div>
+                    <p class="text-white/60 text-sm leading-relaxed max-w-xs">
+                        Professional advisory services for complex claims and risk management solutions.
+                    </p>
+                    <div class="flex gap-3">
+                        <a href="https://www.facebook.com/everestclaims" target="_blank" rel="noopener noreferrer" class="site-footer-social-link" aria-label="Facebook">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8H7v3h2v9h4v-9h3.6l.4-3H13V6c0-.5.5-1 1-1h2.5V1H13c-3 0-4 2-4 4v3z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/company/everestclaims" target="_blank" rel="noopener noreferrer" class="site-footer-social-link" aria-label="LinkedIn">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Services Links -->
+                <div class="flex flex-col items-start space-y-4">
+                    <h3 class="site-footer-title">Services</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="services.html?service=insurance-claims" class="site-footer-link">Property Damage Claims</a></li>
+                        <li><a href="services.html?service=risk-assessment" class="site-footer-link">Risk Survey & Assessment</a></li>
+                        <li><a href="services.html?service=financial-recovery" class="site-footer-link">Marine Cargo Adjusting</a></li>
+                        <li><a href="services.html?service=claims-audit" class="site-footer-link">Forensic Claim Audit</a></li>
+                        <li><a href="services.html?service=emergency-response" class="site-footer-link">Emergency Survey</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Resources -->
+                <div class="flex flex-col items-start space-y-4">
+                    <h3 class="site-footer-title">Resources</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="claims-process.html" class="site-footer-link">Claims Guide</a></li>
+                        <li><a href="cases.html" class="site-footer-link">Case Studies</a></li>
+                        <li><a href="about.html" class="site-footer-link">About Us</a></li>
+                        <li><a href="careers.html" class="site-footer-link">Careers</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Contact & Business Hours -->
+                <div class="flex flex-col items-start space-y-4">
+                    <h3 class="site-footer-title">Contact</h3>
+                    <ul class="space-y-3 text-sm text-white/60">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-brandRed flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            <span>Tinkune, Kathmandu, Nepal</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-brandGreen flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            <span>+977-9851135421</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-brandRed flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            <span class="break-all">everestclaims8848@gmail.com</span>
+                        </li>
+                        <li class="mt-2 pt-3 border-t border-white/10 w-full">
+                            <p class="text-xs text-white/40 uppercase tracking-wider font-semibold mb-1">Business Hours</p>
+                            <p class="text-brandGreen text-xs">Sun - Fri: 10:00 AM - 5:00 PM</p>
+                            <p class="text-brandRed text-xs mt-0.5">Sat: Closed</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="site-footer-bottom flex flex-col md:flex-row justify-between items-center gap-4">
+                <p>
+                    &copy; <span id="current-year"></span> Everest Claims and Advisory Pvt. Ltd. All rights reserved.
                 </p>
+                <div class="flex gap-6">
+                    <a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="terms-of-service.html" class="hover:text-white transition-colors">Terms of Service</a>
+                    <a href="disclaimer.html" class="hover:text-white transition-colors">Disclaimer</a>
+                </div>
             </div>
         </div>
     </footer>

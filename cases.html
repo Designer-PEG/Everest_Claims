@@ -46,6 +46,11 @@
     }
     </script>
     
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <link href="./styles.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -53,80 +58,74 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        heading: ['Outfit', 'sans-serif'],
+                        sans: ['var(--font-body)', 'sans-serif'],
+                        heading: ['var(--font-display)', 'serif'],
+                        devanagari: ['var(--font-devanagari)', 'sans-serif'],
                     },
                     colors: {
-                        blue: {
-                            50: '#eff6ff',
-                            100: '#dbeafe',
-                            200: '#bfdbfe',
-                            300: '#93c5fd',
-                            400: '#60a5fa',
-                            500: '#2563eb',
-                            600: '#1d4ed8',
-                            700: '#1e40af',
-                            800: '#1e3a8a',
-                            900: '#172554',
-                        },
+                        brandRed: 'var(--color-red)',
+                        brandRedDark: 'var(--color-red-dark)',
+                        brandGreen: 'var(--color-green)',
+                        brandGreenDark: 'var(--color-green-dark)',
+                        warmWhite: 'var(--color-paper)',
+                        pureWhite: 'var(--color-surface)',
+                        darkText: 'var(--color-ink)',
+                        lightGray: 'var(--color-paper)',
+                        borderColor: 'var(--border-color)',
+                        mutedText: 'var(--color-muted)',
+                        accentRedComp: 'var(--color-teal-accent)',
+                        accentGreenComp: 'var(--color-plum-accent)',
+                        successColor: 'var(--success)',
+                        warningColor: 'var(--warning)',
+                        errorColor: 'var(--error)'
                     }
                 }
             }
         }
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 </head>
 <body class="bg-gray-50">
     <a href="#main-content" class="skip-link">Skip to Main Content</a>
     <!-- Navbar -->
-    <nav id="navbar" class="fixed top-0 w-full bg-white backdrop-blur-md shadow-md border-b border-gray-200 transition-all duration-300 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-3">
-                <!-- Logo -->
-                <div class="flex items-center space-x-2 z-60">
-                    <a href="index.html" class="flex items-center">
-                        <img src="./assets/img/logo.png" alt="Everest Claims & Advisory Logo" class="h-12 w-auto">
-                        <span class="hidden sm:block font-semibold text-xl text-gray-800 ml-2">
-                            Everest Claims & Advisory
-                        </span>
-                    </a>
-                </div>
+    <header id="siteHeader" class="site-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2 z-50">
+                <a href="index.html" class="flex items-center">
+                    <img src="./assets/img/logo.png" alt="Everest Claims Logo" class="logo-img h-10 sm:h-12 w-auto transition-transform hover:scale-105">
+                    <span class="logo-text font-heading font-bold text-lg sm:text-xl ml-2 tracking-tight">
+                        Everest Claims
+                    </span>
+                </a>
+            </div>
 
-                <!-- Desktop navigation -->
-                <div class="hidden md:flex items-center space-x-6">
-                    <a href="index.html" class="px-3 py-2 font-medium transition-colors" id="nav-home">
-                        Home
-                    </a>
-                    <a href="about.html" class="px-3 py-2 font-medium transition-colors text-gray-700 hover:text-blue-600" id="nav-about">
-                        About Us
-                    </a>
-                    <a href="services.html" class="px-3 py-2 font-medium transition-colors text-gray-700 hover:text-blue-600" id="nav-services">
-                        Our Services
-                    </a>
-                    <a href="contact.html" class="px-3 py-2 font-medium transition-colors text-gray-700 hover:text-blue-600" id="nav-contact">
-                        Contact
-                    </a>
-                    <a href="tel:+9779851135421" class="ml-4 flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                        </svg>
-                        <span>Call Now</span>
-                    </a>
-                </div>
+            <!-- Desktop navigation -->
+            <div class="hidden md:flex items-center space-x-8 nav-links">
+                <a href="index.html" class="font-medium" id="nav-home">Home</a>
+                <a href="about.html" class="font-medium" id="nav-about">About Us</a>
+                <a href="services.html" class="font-medium" id="nav-services">Services</a>
+                <a href="claims-process.html" class="font-medium" id="nav-claims">Claims Process</a>
+                <a href="cases.html" class="font-medium" id="nav-cases">Resources</a>
+                <a href="contact.html" class="font-medium" id="nav-contact">Contact</a>
+                
+                <a href="tel:+9779851135421" class="ml-2 flex items-center gap-2 bg-brandRed hover:bg-brandRedDark text-white px-5 py-2.5 rounded-sm transition-all duration-300 font-semibold shadow-sm text-sm group">
+                    <svg class="w-4 h-4 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                    </svg>
+                    <span>Call Now</span>
+                </a>
+            </div>
 
-                <!-- Mobile menu toggle -->
-                <div class="md:hidden flex items-center z-60">
-                    <button id="mobile-menu-toggle" class="outline-none" aria-label="Toggle menu">
-                        <svg id="menu-icon" class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                        </svg>
-                    </button>
-                </div>
+            <!-- Mobile menu toggle -->
+            <div class="md:hidden flex items-center z-50">
+                <button id="mobile-menu-toggle" class="outline-none p-2 rounded-md hover:bg-slate-100/10 transition-colors" aria-label="Toggle menu">
+                    <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
             </div>
         </div>
-    </nav>
+    </header>
 
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="fixed inset-0 z-40 hidden">
@@ -159,26 +158,41 @@
     </div>
 
     <!-- Main Content -->
-    <main id="main-content" class="min-h-screen mt-12 bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-12">
-                <h1 class="text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl animate-fade-in">
-                    Case Studies
-                </h1>
-                <p class="mt-5 max-w-xl mx-auto text-xl text-gray-500 animate-slide-up">
-                    Explore our recent investigations and how we've helped clients resolve complex insurance claims.
-                </p>
+    <main id="main-content" class="min-h-screen">
+        <!-- Page Header Banner -->
+        <section class="page-header-banner relative overflow-hidden">
+            <!-- Decorative background blobs -->
+            <div class="bg-blob bg-blob-red w-80 h-80 -top-20 -left-20 opacity-15"></div>
+            <div class="bg-blob bg-blob-green w-96 h-96 bottom-10 -right-20 opacity-15"></div>
+            
+            <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 relative z-10">
+                <div class="text-center max-w-3xl mx-auto scroll-reveal animate-slide-up">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 text-brandRed text-xs font-semibold uppercase tracking-wider mb-4">Our Track Record</span>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight tracking-tight text-white animate-float">Case Studies</h1>
+                    <p class="text-lg md:text-xl text-white/80 leading-relaxed max-w-2xl mx-auto">
+                        Explore our recent investigations and how we've helped clients resolve complex insurance claims.
+                    </p>
+                </div>
             </div>
+        </section>
 
-            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-8">
+        <!-- Content Area -->
+        <div class="py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+            <!-- Background blobs -->
+            <div class="bg-blob bg-blob-red w-80 h-80 -top-10 -left-10 opacity-5"></div>
+            <div class="bg-blob bg-blob-green w-96 h-96 -bottom-10 -right-10 opacity-5"></div>
+
+            <div class="max-w-7xl mx-auto relative z-10">
+
+            <div class="glass-panel border-l-4 border-yellow-400 p-4 mb-8 bg-white/60 rounded-r-md rounded-l-none">
                 <div class="flex">
                     <div class="flex-shrink-0">
-                        <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <svg class="h-5 w-5 text-yellow-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
                         </svg>
                     </div>
-                    <div class="ml-3">
-                        <p class="text-sm text-yellow-700">
+                    <div class="ml-3 text-left">
+                        <p class="text-sm text-yellow-800">
                             <strong>Disclaimer:</strong> All case studies on this page are fictional examples created for demonstration purposes only. Any resemblance to actual cases is purely coincidental.
                         </p>
                     </div>
@@ -187,16 +201,16 @@
 
             <!-- Interactive Category Filter Bar -->
             <div class="flex flex-wrap justify-center gap-3 mb-12" id="filter-bar" role="tablist" aria-label="Filter case studies by category">
-                <button onclick="filterCases('All')" class="filter-btn active px-5 py-2.5 text-sm font-semibold rounded-full bg-blue-600 text-white shadow-md hover:bg-blue-700 transition-all duration-200" role="tab" aria-selected="true" data-category="All">
+                <button onclick="filterCases('All')" class="filter-btn active px-5 py-2.5 text-sm font-bold rounded-md bg-brandRed text-white shadow-sm hover:bg-[#ab3325] transition-all duration-200" role="tab" aria-selected="true" data-category="All">
                     All Case Studies
                 </button>
-                <button onclick="filterCases('Property Damage')" class="filter-btn px-5 py-2.5 text-sm font-medium rounded-full bg-white text-gray-700 hover:bg-gray-100 hover:text-gray-950 border border-gray-200 transition-all duration-200" role="tab" aria-selected="false" data-category="Property Damage">
+                <button onclick="filterCases('Property Damage')" class="filter-btn px-5 py-2.5 text-sm font-semibold rounded-md bg-white text-slate-700 hover:bg-slate-50 border border-slate-200 transition-all duration-200" role="tab" aria-selected="false" data-category="Property Damage">
                     Property Damage
                 </button>
-                <button onclick="filterCases('Marine Cargo')" class="filter-btn px-5 py-2.5 text-sm font-medium rounded-full bg-white text-gray-700 hover:bg-gray-100 hover:text-gray-950 border border-gray-200 transition-all duration-200" role="tab" aria-selected="false" data-category="Marine Cargo">
+                <button onclick="filterCases('Marine Cargo')" class="filter-btn px-5 py-2.5 text-sm font-semibold rounded-md bg-white text-slate-700 hover:bg-slate-50 border border-slate-200 transition-all duration-200" role="tab" aria-selected="false" data-category="Marine Cargo">
                     Marine Cargo
                 </button>
-                <button onclick="filterCases('Fraud Detection')" class="filter-btn px-5 py-2.5 text-sm font-medium rounded-full bg-white text-gray-700 hover:bg-gray-100 hover:text-gray-950 border border-gray-200 transition-all duration-200" role="tab" aria-selected="false" data-category="Fraud Detection">
+                <button onclick="filterCases('Fraud Detection')" class="filter-btn px-5 py-2.5 text-sm font-semibold rounded-md bg-white text-slate-700 hover:bg-slate-50 border border-slate-200 transition-all duration-200" role="tab" aria-selected="false" data-category="Fraud Detection">
                     Fraud Detection
                 </button>
             </div>
@@ -207,142 +221,101 @@
             </div>
 
             <div class="mt-12 text-center">
-                <h2 class="text-2xl font-bold text-gray-900">Need help with a complex claim?</h2>
-                <p class="mt-4 text-lg text-gray-600">
+                <h2 class="text-2xl font-bold text-darkText">Need help with a complex claim?</h2>
+                <p class="mt-4 text-lg text-mutedText">
                     Our team of experienced insurance surveyors is ready to assist you.
                 </p>
                 <div class="mt-8">
                     <a href="contact.html">
-                        <button class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        <button class="inline-flex items-center px-6 py-3 border border-transparent text-base font-bold rounded-md shadow-sm text-white bg-brandRed hover:bg-[#ab3325]">
                             Contact Our Team
                         </button>
                     </a>
                 </div>
             </div>
+
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-black text-gray-300 py-12 md:py-16 border-t border-gray-800">
+    <footer class="site-footer">
         <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 text-center md:text-left">
-                <!-- Logo and Description -->
-                <div class="col-span-1 flex flex-col items-center md:items-start">
-                    <div class="flex items-center space-x-3 mb-6">
-                        <img src="./assets/img/logo.png" alt="Everest Claims and Advisory" class="h-10" />
-                        <span class="text-xl font-semibold text-white">Everest Claims</span>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 text-left">
+                <!-- Column 1: Logo & Tagline -->
+                <div class="flex flex-col items-start space-y-5">
+                    <div class="flex items-center space-x-3">
+                        <img src="./assets/img/logo.png" alt="Everest Claims and Advisory Logo" class="h-10 w-auto" />
+                        <span class="text-xl font-heading font-bold text-white tracking-tight">Everest Claims</span>
                     </div>
-                    <p class="text-gray-400 text-sm leading-relaxed max-w-xs">
+                    <p class="text-white/60 text-sm leading-relaxed max-w-xs">
                         Professional advisory services for complex claims and risk management solutions.
                     </p>
+                    <div class="flex gap-3">
+                        <a href="https://www.facebook.com/everestclaims" target="_blank" rel="noopener noreferrer" class="site-footer-social-link" aria-label="Facebook">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8H7v3h2v9h4v-9h3.6l.4-3H13V6c0-.5.5-1 1-1h2.5V1H13c-3 0-4 2-4 4v3z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/company/everestclaims" target="_blank" rel="noopener noreferrer" class="site-footer-social-link" aria-label="LinkedIn">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Services -->
-                <div class="md:flex md:flex-col md:items-start">
-                    <h3 class="text-sm font-semibold text-white mb-6 uppercase tracking-wider">Services</h3>
-                    <ul class="space-y-3">
-                        <li>
-                            <a href="/services.html?insurance-claims" class="text-gray-400 hover:text-white transition duration-200 text-sm block">
-                                Insurance Claims
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/services.html?risk-assessment" class="text-gray-400 hover:text-white transition duration-200 text-sm block">
-                                Risk Assessment
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/services.html?legal-consultation" class="text-gray-400 hover:text-white transition duration-200 text-sm block">
-                                Legal Consultation
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/services.html?financial-recovery" class="text-gray-400 hover:text-white transition duration-200 text-sm block">
-                                Financial Recovery
-                            </a>
-                        </li>
+                <!-- Column 2: Services Links -->
+                <div class="flex flex-col items-start space-y-4">
+                    <h3 class="site-footer-title">Services</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="services.html?service=insurance-claims" class="site-footer-link">Property Damage Claims</a></li>
+                        <li><a href="services.html?service=risk-assessment" class="site-footer-link">Risk Survey & Assessment</a></li>
+                        <li><a href="services.html?service=financial-recovery" class="site-footer-link">Marine Cargo Adjusting</a></li>
+                        <li><a href="services.html?service=claims-audit" class="site-footer-link">Forensic Claim Audit</a></li>
+                        <li><a href="services.html?service=emergency-response" class="site-footer-link">Emergency Survey</a></li>
                     </ul>
                 </div>
 
-                <!-- Company -->
-                <div class="md:flex md:flex-col md:items-start">
-                    <h3 class="text-sm font-semibold text-white mb-6 uppercase tracking-wider">Company</h3>
-                    <ul class="space-y-3">
-                        <li>
-                            <a href="/about.html" class="text-gray-400 hover:text-white transition duration-200 text-sm block">
-                                About Us
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/contact.html" class="text-gray-400 hover:text-white transition duration-200 text-sm block">
-                                Contact Us
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/cases.html" class="text-gray-400 hover:text-white transition duration-200 text-sm block">
-                                Case Studies
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/careers.html" class="text-gray-400 hover:text-white transition duration-200 text-sm block">
-                                Careers
-                            </a>
-                        </li>
+                <!-- Column 3: Resources -->
+                <div class="flex flex-col items-start space-y-4">
+                    <h3 class="site-footer-title">Resources</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="claims-process.html" class="site-footer-link">Claims Guide</a></li>
+                        <li><a href="cases.html" class="site-footer-link">Case Studies</a></li>
+                        <li><a href="about.html" class="site-footer-link">About Us</a></li>
+                        <li><a href="careers.html" class="site-footer-link">Careers</a></li>
                     </ul>
                 </div>
 
-                <!-- Contact -->
-                <div class="md:flex md:flex-col md:items-start">
-                    <h3 class="text-sm font-semibold text-white mb-6 uppercase tracking-wider">Contact</h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-center justify-center md:justify-start gap-2 text-gray-400 text-sm">
-                            <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                            </svg>
-                            Tinkune, Kathmandu
+                <!-- Column 4: Contact & Business Hours -->
+                <div class="flex flex-col items-start space-y-4">
+                    <h3 class="site-footer-title">Contact</h3>
+                    <ul class="space-y-3 text-sm text-white/60">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-brandRed flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            <span>Tinkune, Kathmandu, Nepal</span>
                         </li>
-                        <li class="flex items-center justify-center md:justify-start gap-2 text-gray-400 text-sm">
-                            <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                            </svg>
-                            +977-9851135421
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-brandGreen flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            <span>+977-9851135421</span>
                         </li>
-                        <li class="flex items-center justify-center md:justify-start gap-2 text-gray-400 text-sm">
-                            <svg class="w-4 h-4 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                            </svg>
-                            everestclaims8848@gmail.com
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-brandRed flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            <span class="break-all">everestclaims8848@gmail.com</span>
                         </li>
-                        <li class="mt-4 pt-4 border-t border-gray-800">
-                            <div class="flex items-center justify-center md:justify-start gap-2 mb-2">
-                                <svg class="w-4 h-4 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
-                                <h4 class="text-xs font-semibold text-white uppercase tracking-wider">Business Hours</h4>
-                            </div>
-                            <p class="text-emerald-400 text-sm">Sunday - Friday: 10:00 AM - 5:00 PM</p>
-                            <p class="text-red-400 text-sm mt-1">Saturday: Closed</p>
+                        <li class="mt-2 pt-3 border-t border-white/10 w-full">
+                            <p class="text-xs text-white/40 uppercase tracking-wider font-semibold mb-1">Business Hours</p>
+                            <p class="text-brandGreen text-xs">Sun - Fri: 10:00 AM - 5:00 PM</p>
+                            <p class="text-brandRed text-xs mt-0.5">Sat: Closed</p>
                         </li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Bottom Bar -->
-            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-gray-500 text-xs order-2 md:order-1">
-                    © <span id="current-year"></span> Everest Claims and Advisory Pvt. Ltd. All rights reserved.
+            <div class="site-footer-bottom flex flex-col md:flex-row justify-between items-center gap-4">
+                <p>
+                    &copy; <span id="current-year"></span> Everest Claims and Advisory Pvt. Ltd. All rights reserved.
                 </p>
-                <div class="flex flex-wrap justify-center gap-4 md:gap-6 order-1 md:order-2">
-                    <a href="/privacy-policy.html" class="text-gray-400 hover:text-white transition duration-200 text-xs">
-                        Privacy Policy
-                    </a>
-                    <a href="/terms-of-service.html" class="text-gray-400 hover:text-white transition duration-200 text-xs">
-                        Terms of Service
-                    </a>
-                    <a href="/disclaimer.html" class="text-gray-400 hover:text-white transition duration-200 text-xs">
-                        Disclaimer
-                    </a>
+                <div class="flex gap-6">
+                    <a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="terms-of-service.html" class="hover:text-white transition-colors">Terms of Service</a>
+                    <a href="disclaimer.html" class="hover:text-white transition-colors">Disclaimer</a>
                 </div>
             </div>
         </div>
@@ -387,7 +360,7 @@
         });
 
         // Hide navbar on scroll
-        const navbar = document.getElementById('navbar');
+        const navbar = document.getElementById('siteHeader') || document.getElementById('navbar');
         let lastScrollY = window.scrollY;
         const scrollThreshold = 10;
         const navbarHeight = navbar.offsetHeight;
@@ -481,7 +454,7 @@
                 outcome: "92% Recovery",
                 outcomeType: "success",
                 date: "March 2024",
-                icon: `<svg class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>`
+                icon: `<svg class="h-6 w-6 text-brandRed" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>`
             },
             {
                 id: 2,
@@ -491,7 +464,7 @@
                 outcome: "Liability Shifted",
                 outcomeType: "info",
                 date: "November 2024",
-                icon: `<svg class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h8a1 1 0 001-1zm0 0h5l3 3V8h-8v8z"/></svg>`
+                icon: `<svg class="h-6 w-6 text-brandGreen" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h8a1 1 0 001-1zm0 0h5l3 3V8h-8v8z"/></svg>`
             },
             {
                 id: 3,
@@ -501,7 +474,7 @@
                 outcome: "Claim Denied",
                 outcomeType: "danger",
                 date: "July 2024",
-                icon: `<svg class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 00-2 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>`
+                icon: `<svg class="h-6 w-6 text-brandRed" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 00-2 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>`
             },
             {
                 id: 4,
@@ -511,7 +484,7 @@
                 outcome: "Claims Resolved",
                 outcomeType: "info",
                 date: "January 2025",
-                icon: `<svg class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>`
+                icon: `<svg class="h-6 w-6 text-brandGreen" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>`
             },
             {
                 id: 5,
@@ -521,7 +494,7 @@
                 outcome: "Liability Allocated",
                 outcomeType: "info",
                 date: "September 2025",
-                icon: `<svg class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>`
+                icon: `<svg class="h-6 w-6 text-brandRed" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>`
             },
             {
                 id: 6,
@@ -531,7 +504,7 @@
                 outcome: "Valuation Verified",
                 outcomeType: "success",
                 date: "May 2025",
-                icon: `<svg class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>`
+                icon: `<svg class="h-6 w-6 text-brandGreen" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>`
             }
         ];
 
@@ -545,48 +518,46 @@
             if (filteredCases.length === 0) {
                 gridContainer.innerHTML = `
                     <div class="col-span-full text-center py-16">
-                        <p class="text-lg text-gray-500 font-medium">No case studies found in this category.</p>
+                        <p class="text-lg text-slate-500 font-medium">No case studies found in this category.</p>
                     </div>
                 `;
                 return;
             }
 
             gridContainer.innerHTML = filteredCases.map(c => {
-                let badgeClass = "bg-blue-50 text-blue-700 border-blue-100"; // default info
+                let badgeClass = "bg-slate-50 text-slate-600 border-slate-200"; // default info
                 if (c.outcomeType === "success") {
-                    badgeClass = "bg-emerald-50 text-emerald-700 border-emerald-100";
+                    badgeClass = "bg-green-50 text-brandGreen border-green-100";
                 } else if (c.outcomeType === "danger") {
-                    badgeClass = "bg-red-50 text-red-700 border-red-100";
+                    badgeClass = "bg-red-50 text-brandRed border-red-100";
                 }
 
                 return `
-                    <article class="flex flex-col rounded-xl shadow-md overflow-hidden bg-white hover-lift border border-gray-100 animate-slide-up">
-                        <div class="flex-1 p-6 sm:p-8 flex flex-col justify-between">
-                            <div class="flex-1">
-                                <div class="flex items-center justify-between">
-                                    <span class="text-xs font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
-                                        ${c.category}
-                                    </span>
-                                    <span class="text-xs text-gray-500">${c.date}</span>
-                                </div>
-                                <h3 class="mt-4 text-xl font-bold text-gray-900 leading-snug">
-                                    ${c.title}
-                                </h3>
-                                <p class="mt-3 text-sm text-gray-600 leading-relaxed max-w-[65ch]">
-                                    ${c.description}
-                                </p>
+                    <article class="glass-panel p-6 flex flex-col justify-between text-left bg-white/70 animate-slide-up">
+                        <div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-semibold text-brandRed bg-red-50 px-3 py-1.5 rounded-md border border-red-100">
+                                    ${c.category}
+                                </span>
+                                <span class="text-xs text-slate-400 font-medium">${c.date}</span>
                             </div>
-                            <div class="mt-6 pt-5 border-t border-gray-100 flex items-center justify-between">
-                                <div class="flex items-center space-x-2">
-                                    <div class="flex-shrink-0 h-10 w-10 bg-blue-50 rounded-lg flex items-center justify-center">
-                                        ${c.icon}
-                                    </div>
-                                    <div class="text-left">
-                                        <p class="text-xs font-medium text-gray-500">Case Outcome</p>
-                                        <span class="inline-flex mt-0.5 px-2.5 py-1 text-xs font-semibold rounded-full border ${badgeClass}">
-                                            ${c.outcome}
-                                        </span>
-                                    </div>
+                            <h3 class="mt-4 text-xl font-bold text-darkText leading-snug">
+                                ${c.title}
+                            </h3>
+                            <p class="mt-3 text-sm text-mutedText leading-relaxed max-w-[65ch]">
+                                ${c.description}
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-5 border-t border-borderColor flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="flex-shrink-0 h-10 w-10 text-brandGreen flex items-center justify-center">
+                                    ${c.icon}
+                                </div>
+                                <div class="text-left">
+                                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Case Outcome</p>
+                                    <span class="inline-flex mt-1 px-3 py-1 text-xs font-bold rounded-md border ${badgeClass}">
+                                        ${c.outcome}
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -602,12 +573,12 @@
             buttons.forEach(btn => {
                 const btnCat = btn.getAttribute("data-category");
                 if (btnCat === category) {
-                    btn.classList.add("active", "bg-blue-600", "text-white", "shadow-md");
-                    btn.classList.remove("bg-white", "text-gray-700");
+                    btn.classList.add("active", "bg-brandRed", "text-white", "shadow-sm");
+                    btn.classList.remove("bg-white", "text-slate-700", "hover:bg-slate-50", "border-slate-200");
                     btn.setAttribute("aria-selected", "true");
                 } else {
-                    btn.classList.remove("active", "bg-blue-600", "text-white", "shadow-md");
-                    btn.classList.add("bg-white", "text-gray-700");
+                    btn.classList.remove("active", "bg-brandRed", "text-white", "shadow-sm");
+                    btn.classList.add("bg-white", "text-slate-700", "hover:bg-slate-50", "border-slate-200");
                     btn.setAttribute("aria-selected", "false");
                 }
             });
@@ -615,6 +586,7 @@
             // Re-render grid
             renderCaseStudies(category);
         }
+
 
         // Set current year in footer
         document.getElementById('current-year').textContent = new Date().getFullYear();
