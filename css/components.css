@@ -35,20 +35,20 @@
    Glassmorphic Panels
    ======================================== */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(232, 229, 224, 0.8);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-glass);
+  box-shadow: var(--shadow-md);
   transition: all var(--transition-normal);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg); /* softer premium rounded corners */
 }
 
 .glass-panel:hover {
-  background: rgba(255, 255, 255, 0.9);
-  border-color: rgba(203, 62, 45, 0.2);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
-  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.78);
+  border-color: var(--border-glass-hover);
+  box-shadow: var(--shadow-premium);
+  transform: translateY(-5px);
 }
 
 /* ========================================
@@ -245,9 +245,10 @@
    Section divider — subtle decorative line
    ======================================== */
 .section-divider {
-  width: 48px;
-  height: 3px;
-  background: var(--color-red);
-  border-radius: 2px;
-  margin: 1rem auto 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-green) 0%, var(--color-red) 100%);
+  border-radius: 9999px;
+  margin: 1.25rem auto 0;
+  box-shadow: 0 1px 4px rgba(203, 62, 45, 0.2);
 }
